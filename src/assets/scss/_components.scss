@@ -1,0 +1,104 @@
+@import "/src/assets/scss/variables";
+
+.card {
+  color: $primary-color-85;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //   background-position: bottom;
+  padding-bottom: 30px;
+  height: 100%;
+  h6 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .card-title-area {
+    padding: 24px 17px;
+    padding-bottom: 0;
+    .card-title {
+      text-transform: uppercase;
+      font-size: 16px;
+      border-bottom: 1px solid #d4d9ea;
+      padding-bottom: 1rem;
+      margin-bottom: 27px;
+    }
+  }
+  .card-body-padding-2 {
+    padding-left: 12px !important;
+    padding-right: 29px !important;
+  }
+  .card-body {
+    margin-bottom: 25px;
+    padding-left: 46px;
+    padding-right: 32px;
+    .card-body-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+
+      p {
+        font-size: 18px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      span {
+        font-size: 16px;
+      }
+    }
+    .card-body-item-2 {
+      .card-body-item-img {
+        img {
+          border-radius: 50%;
+        }
+      }
+      .card-body-item-content {
+        p {
+          color: #585858;
+          font-size: 12px;
+          font-weight: 300;
+          font-style: italic;
+        }
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .card-body-date {
+      text-align: right;
+      margin-bottom: 20px;
+      h6 {
+        font-size: 12px;
+        font-weight: 500;
+        font-style: italic;
+      }
+    }
+  }
+  .card-footer {
+    justify-content: space-between;
+    margin-left: 72px;
+    margin-right: 23px;
+    .total {
+      padding: 2px 49px;
+      color: $orange-color;
+      font-size: 24px;
+      border: 1px solid #b3b6da;
+      border-radius: 40px;
+    }
+    a {
+      padding: 5px 24px;
+      border: 1px solid #b3b6da;
+      border-radius: 40px;
+      color: $primary-color;
+    }
+  }
+  .week-type {
+    margin-top: 80px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+    img {
+      margin-right: 10px;
+    }
+  }
+}

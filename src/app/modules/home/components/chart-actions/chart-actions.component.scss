@@ -1,0 +1,27 @@
+@import "/src/assets/scss/variables";
+.chart-actions {
+  column-gap: 30px;
+  align-items: stretch;
+  .chart-action {
+    text-align: center;
+    padding: 39px 22px;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 30px;
+    }
+  }
+  .chart-action-1 {
+    background-color: $primary-color;
+    color: $color-white;
+  }
+  .chart-action-2 {
+    background-color: $primary-light-color;
+    color: $primary-color;
+  }
+}

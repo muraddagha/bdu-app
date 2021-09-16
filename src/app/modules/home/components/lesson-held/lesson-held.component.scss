@@ -1,0 +1,55 @@
+@import "/src/assets/scss/variables";
+
+.lesson-held {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .lesson-held-content {
+    width: 290px;
+    height: 290px;
+    position: relative;
+    .outer {
+      height: 290px;
+      width: 290px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .inner {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        box-shadow: 1px 3px 16px 2px rgb(34 37 169 / 10%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .percentage {
+          h2 {
+            color: $primary-color;
+            font-size: 55px;
+            font-weight: 500;
+          }
+          p {
+            font-size: 16px;
+            font-weight: 400;
+            color: #8f92a1;
+          }
+        }
+      }
+    }
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    circle {
+      fill: none;
+      stroke: $orange-color;
+      stroke-width: 30px;
+      stroke-dasharray: 752;
+      stroke-dashoffset: 300;
+    }
+  }
+}

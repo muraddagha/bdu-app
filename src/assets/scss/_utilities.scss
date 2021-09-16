@@ -18,6 +18,9 @@
 .align-center {
   align-items: center;
 }
+.flex-end {
+  justify-content: flex-end !important;
+}
 .justify-center {
   justify-content: center;
 }
@@ -67,8 +70,11 @@
   background-color: $primary-color;
 }
 .text-color-white {
-  color: $color-white;
+  color: $color-white !important;
   a {
     color: white;
   }
+}
+.mb-10 {
+  margin-bottom: 10px;
 }

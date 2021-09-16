@@ -1,0 +1,8 @@
+.home-container {
+  .home-container-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 46px;
+    row-gap: 60px;
+  }
+}
