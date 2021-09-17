@@ -4,6 +4,16 @@ header {
   .header-top {
     margin-top: 20px;
     margin-bottom: 12px;
+    .header-top-logo {
+      a {
+        font-size: 17px;
+        font-weight: 600;
+        color: #000;
+        &:visited {
+          color: #000;
+        }
+      }
+    }
   }
   .header-nav {
     padding: 7px 23px;

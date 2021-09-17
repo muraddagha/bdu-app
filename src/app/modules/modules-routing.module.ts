@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/components/home/home.component';
 import { LessonInfoComponent } from './lesson-info/components/lesson-info/lesson-info.component';
 import { ModulesComponent } from './modules.component';
-import { ScheduleComponent } from './schedule/schedule/schedule.component';
+import { ScheduleComponent } from './schedule/components/schedule/schedule.component';
 
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: '', component: HomeComponent,
-        data: { data: 0 },
+        data: { type: 0 },
       },
       {
         path: 'lesson-info', component: LessonInfoComponent,
@@ -21,7 +21,7 @@ const routes: Routes = [
       {
         path: 'schedule',
         component: ScheduleComponent,
-        data: { templateHeaderType: 1 },
+        data: { type: 1 },
       }
     ]
   },

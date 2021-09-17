@@ -103,6 +103,60 @@
   }
 }
 
+.schedule-table {
+  table {
+    border-spacing: 5px;
+    th {
+      background-color: #e7ebf8;
+      padding: 20px 10px;
+      color: #585858;
+      &:first-child {
+        width: 120px;
+      }
+      h2,
+      p {
+        font-size: 16px;
+      }
+    }
+    td {
+      background-color: $color-white;
+      color: $primary-color;
+      vertical-align: top;
+      .content {
+        padding-block: 12px;
+        padding-left: 14px;
+        padding-right: 8px;
+        p:first-child {
+          width: 30px;
+        }
+        .content-type-lesson {
+          span {
+            font-size: 12px;
+            font-weight: 300;
+            font-style: italic;
+            color: #868686;
+          }
+        }
+      }
+    }
+    .week {
+      padding: 42px 32px;
+      font-size: 14px;
+    }
+    .date {
+      background-color: #e7ebf8;
+      width: 100%;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h4 {
+        color: #858585;
+        font-style: italic;
+      }
+    }
+  }
+}
 table {
   width: 100%;
   th {

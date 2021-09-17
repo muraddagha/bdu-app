@@ -1,5 +1,5 @@
-<div class="main-title">
-    <h2>{{title}}</h2>
+<div [ngClass]="{'mb-10':isMargin}" class="main-title">
+    <h2 [ngClass]="{'text-uppercase':isUppercase}">{{title}}</h2>
     <p *ngIf="pointPercent!=''">{{point}} <span>/</span> <span>{{pointPercent}}</span></p>
     <span *ngIf="pointPercent==''">{{point}}</span>
 </div>

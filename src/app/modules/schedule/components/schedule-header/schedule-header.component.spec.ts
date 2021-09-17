@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FreelanceWorkComponent } from './freelance-work.component';
+import { ScheduleHeaderComponent } from './schedule-header.component';
 
-describe('FreelanceWorkComponent', () => {
-  let component: FreelanceWorkComponent;
-  let fixture: ComponentFixture<FreelanceWorkComponent>;
+describe('ScheduleHeaderComponent', () => {
+  let component: ScheduleHeaderComponent;
+  let fixture: ComponentFixture<ScheduleHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreelanceWorkComponent ]
+      declarations: [ ScheduleHeaderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FreelanceWorkComponent);
+    fixture = TestBed.createComponent(ScheduleHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

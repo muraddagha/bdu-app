@@ -10,6 +10,8 @@ export class MainTitleComponent implements OnInit {
   @Input() title: string = ""
   @Input() point: string = ""
   @Input() pointPercent: string = ""
+  @Input() isMargin: boolean = true
+  @Input() isUppercase: boolean = true
   constructor() { }
 
   ngOnInit(): void {

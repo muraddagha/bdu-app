@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ScheduleComponent } from './schedule/schedule.component';
-import { ScheduleMonthComponent } from './schedule-month/schedule-month.component';
-import { ScheduleDayComponent } from './schedule-day/schedule-day.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { ScheduleMonthComponent } from './components/schedule-month/schedule-month.component';
+import { ScheduleDayComponent } from './components/schedule-day/schedule-day.component';
+import { ScheduleHeaderComponent } from './components/schedule-header/schedule-header.component';
+import { ComponentsModule } from 'src/app/components/components.module';
+import { ScheduleWeekComponent } from './components/schedule-week/schedule-week.component';
 
 
 
@@ -10,10 +13,13 @@ import { ScheduleDayComponent } from './schedule-day/schedule-day.component';
   declarations: [
     ScheduleComponent,
     ScheduleMonthComponent,
-    ScheduleDayComponent
+    ScheduleDayComponent,
+    ScheduleHeaderComponent,
+    ScheduleWeekComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ComponentsModule
   ]
 })
 export class ScheduleModule { }
