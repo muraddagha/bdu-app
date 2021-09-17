@@ -1,0 +1,32 @@
+@import "/src/assets/scss/variables";
+.main-title {
+  padding: 7px 5px;
+  background-color: #e7ebf8;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  display: flex;
+  align-items: center;
+  max-width: 220px;
+  color: $primary-color;
+  column-gap: 30px;
+  margin-bottom: 12px;
+  h2,
+  p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  p {
+    span:first-child {
+      color: #6d6d6d;
+    }
+    span {
+      color: $orange-color;
+    }
+  }
+  span {
+    color: $orange-color;
+  }
+}

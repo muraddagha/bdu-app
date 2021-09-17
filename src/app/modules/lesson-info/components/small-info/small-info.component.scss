@@ -1,0 +1,33 @@
+@import "/src/assets/scss/variables";
+
+.small-info {
+  padding: 22px 36px;
+  min-height: 20rem;
+  .small-info-items {
+    .small-info-item {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+      margin-bottom: 5px;
+      p {
+        padding: 10px;
+        color: $primary-color;
+        background-color: $color-white;
+        font-size: 14px;
+        width: 25%;
+        &:not(:first-child) {
+          text-align: center;
+        }
+        &:nth-child(2) {
+          width: 50%;
+        }
+        &:last-child {
+          padding-inline: 30px;
+          img {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}

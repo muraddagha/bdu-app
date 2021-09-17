@@ -5,6 +5,7 @@ import { ModulesRoutingModule } from './modules-routing.module';
 import { ComponentsModule } from '../components/components.module';
 import { ModulesComponent } from './modules.component';
 import { HomeModule } from './home/home.module';
+import { LessonInfoModule } from './lesson-info/lesson-info.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HomeModule } from './home/home.module';
     CommonModule,
     ModulesRoutingModule,
     ComponentsModule,
-    HomeModule
+    HomeModule,
+    LessonInfoModule,
   ]
 })
 export class ModulesModule { }

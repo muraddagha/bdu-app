@@ -3,11 +3,11 @@
         <div class="header-top d-flex justify-between align-center">
             <div class="header-top-logo d-flex align-center column-gap-15">
                 <img src="assets/images/layout/logo.svg" alt="logo">
-                <div class="logo-title">
+                <a [routerLink]="['']" class="logo-title">
                     <h2 class="font-size-17">Bakı Dövlət Universiteti</h2>
                     <h4 class="font-size-14 text-color-primary font-500 font-italic">Təhsilin Elektron İdarə Olunması
                         Sistemi</h4>
-                </div>
+                </a>
             </div>
             <div class="header-top-signature d-flex align-center column-gap-15">
                 <div class="signature-text font-italic">
@@ -23,7 +23,7 @@
             </div>
             <nav class="navigations d-flex column-gap-20 align-center">
                 <a href="#" class="active">Tədris</a>
-                <a href="#">Cədvəl</a>
+                <a [routerLink]="['schedule']">Cədvəl</a>
                 <a href="#">Hesabatlar</a>
                 <a href="#">Təkliflər</a>
                 <a href="#">Müraciətlər</a>

@@ -10,6 +10,7 @@ import { HomeContainerComponent } from './components/home-container/home-contain
 import { LessonHeldComponent } from './components/lesson-held/lesson-held.component';
 import { ChartAreaComponent } from './components/chart-area/chart-area.component';
 import { ChartActionsComponent } from './components/chart-actions/chart-actions.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -27,7 +28,8 @@ import { ChartActionsComponent } from './components/chart-actions/chart-actions.
     ChartActionsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
 })
 export class HomeModule { }

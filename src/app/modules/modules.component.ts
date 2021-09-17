@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-modules',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModulesComponent implements OnInit {
 
-  constructor() { }
+  public layoutType
+  // constructor(private activatedRoute: ActivatedRoute) {
+  //   this.activatedRoute.firstChild.data.subscribe(res => {
+  //     console.log(res);
+
+  //   })
+  // }
+
 
   ngOnInit(): void {
   }

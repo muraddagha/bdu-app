@@ -1,0 +1,6 @@
+.lesson-small-infos {
+  column-gap: 60px;
+  & > * {
+    flex-basis: 100%;
+  }
+}
