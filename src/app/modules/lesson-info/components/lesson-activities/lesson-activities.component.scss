@@ -3,43 +3,6 @@
 .lesson-activities {
   padding: 21px 41px;
   margin-bottom: 50px;
-  .lesson-activities-table {
-    margin-bottom: 33px;
-    max-height: 200px;
-    overflow-y: scroll;
-    table {
-      border-spacing: 2px 5px;
-
-      th {
-        background-color: $secondary-color-dark;
-        color: $color-white;
-        font-size: 16px;
-        &:first-child {
-          text-align: left;
-        }
-      }
-      td {
-        background-color: $color-white;
-        color: $primary-color;
-        font-size: 14px;
-        margin-bottom: 5px;
-        span {
-          padding: 6px 15px;
-          border: 1px solid #b3b6da;
-          border-radius: 40px;
-          background-color: #f6faff;
-        }
-        &:not(:first-child) {
-          text-align: center;
-        }
-      }
-      th,
-      td {
-        padding: 10px;
-        font-weight: 500;
-      }
-    }
-  }
   .table-info {
     &,
     p {

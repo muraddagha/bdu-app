@@ -15,8 +15,10 @@ export class LayoutComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.activatedRoute.firstChild.data.pipe(map(val => val["type"])).subscribe(res => {
-          this.layoutType = res
+        this.activatedRoute.firstChild.data.pipe(map(val => val["layoutType"])).subscribe(res => {
+          if (res != null || res != undefined) {
+            this.layoutType = res
+          }
         })
       }
     });

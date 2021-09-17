@@ -12,16 +12,21 @@ const routes: Routes = [
     children: [
       {
         path: '', component: HomeComponent,
-        data: { type: 0 },
+        data: { layoutType: 0, sidebarType: 0 },
       },
       {
         path: 'lesson-info', component: LessonInfoComponent,
-        data: { type: 0 }
+        data: { layoutType: 0 }
       },
       {
         path: 'schedule',
         component: ScheduleComponent,
-        data: { type: 1 },
+        data: { layoutType: 1, sidebarType: 0 },
+      },
+      {
+        path: 'appeals',
+        data: { layoutType: 0, sidebarType: 1 },
+        loadChildren: () => import("./appeals/appeals.module").then(m => m.AppealsModule)
       }
     ]
   },

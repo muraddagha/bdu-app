@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { SidebarType } from 'src/app/enums/sidebar-type';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  @Input() sidebarType: SidebarType = SidebarType.Education
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.activatedRoute.firstChild.data.pipe(map(val => val["sidebarType"])).subscribe(res => {
+          if (res != null || res != undefined) {
+            this.sidebarType = res
+          }
+        })
+      }
+    });
+  }
 
   ngOnInit(): void {
   }

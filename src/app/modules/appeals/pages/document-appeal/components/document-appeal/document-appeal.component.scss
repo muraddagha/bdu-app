@@ -1,0 +1,10 @@
+@import "/src/assets/scss/variables";
+
+.document-appeal {
+  background-color: #f6f8ff;
+  padding: 21px 41px;
+  .common-table {
+    max-height: initial !important;
+    overflow: auto !important;
+  }
+}

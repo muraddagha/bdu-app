@@ -1,12 +1,12 @@
 <section class="sidebar ">
     <div class="sidebar-area radius-20" style="background-image: url('assets/images/layout/sidebar-bg.png');">
-        <div class="sidebar-top-area">
+        <div *ngIf="sidebarType==0" class="sidebar-top-area">
             <div class="sidebar-top d-flex justify-between align-center">
                 <h2 class="font-600 font-size-14">Cari semestr</h2>
                 <img src="assets/images/icons/vector-down.svg" alt="vector-down">
             </div>
         </div>
-        <div class="sidebar-body">
+        <div *ngIf="sidebarType==0" class="sidebar-body">
             <div class="sidebar-body-item">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
                 <a class="active" href="#">Riyazi Analiz </a>
@@ -22,6 +22,28 @@
             <div class="sidebar-body-item">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
                 <a href="#">Informatika </a>
+            </div>
+        </div>
+        <div *ngIf="sidebarType==1" class="sidebar-body">
+            <div class="sidebar-body-item">
+                <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
+                <a class="active" href="#">Sənəd müraciəti </a>
+            </div>
+            <div class="sidebar-body-item">
+                <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
+                <a href="#">Fənn müraciəti </a>
+            </div>
+            <div class="sidebar-body-item">
+                <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
+                <a href="#">Yay məktəbi müraciəti </a>
+            </div>
+            <div class="sidebar-body-item">
+                <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
+                <a href="#">Buraxılış işi </a>
+            </div>
+            <div class="sidebar-body-item">
+                <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
+                <a href="#">Digər müraciətlər </a>
             </div>
         </div>
     </div>

@@ -1,0 +1,11 @@
+@import "/src/assets/scss/variables";
+
+a {
+  background-color: #e7ebf8;
+  padding: 6px 33px;
+  border-radius: 100px;
+  max-width: 165px;
+  color: $primary-color;
+  font-size: 16px;
+  font-weight: 500;
+}

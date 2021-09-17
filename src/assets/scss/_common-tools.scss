@@ -1,7 +1,9 @@
 @import "/src/assets/scss/utilities";
 @import "/src/assets/scss/variables";
 @import "/src/assets/scss/components";
-
+table {
+  width: 100%;
+}
 * {
   box-sizing: border-box;
 }
