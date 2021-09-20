@@ -10,18 +10,32 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    background-color: $primary-light-color;
+    color: $primary-color;
+    &:hover {
+      background-color: $primary-color;
+      color: $color-white;
+      transition: 0.3s background;
+      svg {
+        rect,
+        path {
+          fill: white;
+        }
+      }
+    }
+
     h2 {
       font-size: 16px;
       font-weight: 700;
       margin-top: 30px;
     }
   }
-  .chart-action-1 {
-    background-color: $primary-color;
-    color: $color-white;
-  }
-  .chart-action-2 {
-    background-color: $primary-light-color;
-    color: $primary-color;
-  }
+  // .chart-action-1 {
+  //   background-color: $primary-color;
+  //   color: $color-white;
+  // }
+  // .chart-action-2 {
+  //   background-color: $primary-light-color;
+  //   color: $primary-color;
+  // }
 }

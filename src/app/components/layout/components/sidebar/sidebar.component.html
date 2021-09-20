@@ -1,15 +1,17 @@
 <section class="sidebar ">
     <div class="sidebar-area radius-20" style="background-image: url('assets/images/layout/sidebar-bg.png');">
         <div *ngIf="sidebarType==0" class="sidebar-top-area">
-            <div class="sidebar-top d-flex justify-between align-center">
-                <h2 class="font-600 font-size-14">Cari semestr</h2>
-                <img src="assets/images/icons/vector-down.svg" alt="vector-down">
+            <div class="sidebar-top-content">
+                <div class="sidebar-top d-flex justify-between align-center">
+                    <h2 class="font-600 font-size-14">Cari semestr</h2>
+                    <img src="assets/images/icons/vector-down.svg" alt="vector-down">
+                </div>
             </div>
         </div>
         <div *ngIf="sidebarType==0" class="sidebar-body">
-            <div class="sidebar-body-item">
+            <div class="sidebar-body-item active">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
-                <a class="active" href="#">Riyazi Analiz </a>
+                <a href="#">Riyazi Analiz </a>
             </div>
             <div class="sidebar-body-item">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
