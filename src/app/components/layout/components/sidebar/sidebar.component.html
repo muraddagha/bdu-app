@@ -9,9 +9,12 @@
             </div>
         </div>
         <div *ngIf="sidebarType==0" class="sidebar-body">
-            <div class="sidebar-body-item active">
+            <div class="sidebar-body-item">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
-                <a href="#">Riyazi Analiz </a>
+                <div class="item-title-count " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['']">Riyazi Analiz </a>
+                    <p>7</p>
+                </div>
             </div>
             <div class="sidebar-body-item">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
@@ -27,13 +30,19 @@
             </div>
         </div>
         <div *ngIf="sidebarType==1" class="sidebar-body">
-            <div class="sidebar-body-item">
+            <div class="sidebar-body-item ">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
-                <a class="active" href="#">Sənəd müraciəti </a>
+                <div class="item-title-count " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['/appeals/']">Sənəd müraciəti </a>
+                    <p>7</p>
+                </div>
             </div>
             <div class="sidebar-body-item">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
-                <a href="#">Fənn müraciəti </a>
+                <div class="item-title-count " routerLinkActive="active">
+                    <a [routerLink]="['/appeals/lesson-appeal']">Fənn müraciəti </a>
+                    <p>0</p>
+                </div>
             </div>
             <div class="sidebar-body-item">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">

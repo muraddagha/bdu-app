@@ -33,11 +33,22 @@
       margin-bottom: 15px;
       position: relative;
       padding-inline: 21px;
-      a {
+      a,
+      p {
         color: $color-white;
         font-size: 16px;
         font-weight: 600;
+      }
+      .item-title-count {
+        display: flex;
+        color: $primary-color;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 5px;
+        align-items: center;
         width: 100%;
+        padding-right: 9px !important;
+        justify-content: space-between;
       }
     }
     .active {
@@ -52,13 +63,13 @@
         border-bottom-right-radius: 100px;
         background-color: #d3d3fd;
       }
-      a {
-        background-color: $secondary-light-color;
+      background-color: $secondary-light-color;
+      a,
+      p {
         color: $primary-color;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        padding: 5px;
       }
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
   }
 }

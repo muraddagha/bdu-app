@@ -16,7 +16,7 @@ const routes: Routes = [
       },
       {
         path: 'lesson-info', component: LessonInfoComponent,
-        data: { layoutType: 0 }
+        data: { layoutType: 0, sidebarType: 0 }
       },
       {
         path: 'schedule',

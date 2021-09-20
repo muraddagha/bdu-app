@@ -1,0 +1,27 @@
+.lesson-appeal {
+  .lesson-appeal-area {
+    padding: 21px 41px;
+    background-color: #f6f8ff;
+    .appeal-title {
+      padding: 7px 5px;
+      background-color: #e7ebf8;
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
+      display: flex;
+      align-items: center;
+      max-width: 300px;
+      color: #3d41d7;
+      column-gap: 30px;
+      margin-bottom: 64px;
+      h2 {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+    .lesson-appeal-wrapper {
+      display: grid;
+      grid-template-columns: 0.6fr 0.4fr;
+      column-gap: 50px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.lesson-card-dropdown-item {
+  h6 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  color: #858585;
+  .lesson-card-item-text {
+    background-color: #f6faff;
+    border-radius: 100px;
+    padding: 8px 14px;
+    img {
+      transform: rotate(0);
+      transition: transform 0.4s;
+    }
+  }
+  .active {
+    display: block !important;
+  }
+  .rotate-chevron {
+    transform: rotate(180deg) !important;
+    transition: transform 0.4s !important;
+  }
+  .lesson-card-dropdown-item-content {
+    padding: 23px 36px;
+    border: 1px solid #d8d8d8;
+    border-top: none;
+    background-color: #f6faff;
+    width: 95%;
+    margin-inline: auto;
+    display: none;
+    margin-bottom: 20px;
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #d4d9ea;
+        padding-bottom: 6px;
+      }
+    }
+  }
+}

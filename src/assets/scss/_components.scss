@@ -15,7 +15,6 @@
     padding: 24px 17px;
     padding-bottom: 0;
     .card-title {
-      text-transform: uppercase;
       font-size: 16px;
       border-bottom: 1px solid #d4d9ea;
       padding-bottom: 1rem;
@@ -192,5 +191,46 @@
       padding: 10px;
       font-weight: 500;
     }
+  }
+}
+.lesson-card {
+  background-color: #fff;
+  padding-block: 30px;
+  border-radius: 20px;
+  padding-inline: 25px;
+  height: 100%;
+  color: $primary-color-85;
+  .lesson-card-body {
+    .lesson-card-item {
+      ol {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+      }
+      &:last-child {
+        margin-top: 24px;
+      }
+      .lesson-card-item-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .lesson-card-item-header {
+        text-align: center;
+        border-bottom: 1px solid #d4d9ea;
+        padding-bottom: 15px;
+        h2 {
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .lesson-card-footer {
+    p {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    padding-top: 100px;
   }
 }

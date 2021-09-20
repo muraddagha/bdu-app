@@ -1,0 +1,16 @@
+.lessons {
+  height: 100%;
+  .lesson-card {
+    .lesson-card-body {
+      .lesson-card-item {
+        margin-top: 0;
+      }
+      .lesson-card-dorpdown {
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+      }
+    }
+  }
+}

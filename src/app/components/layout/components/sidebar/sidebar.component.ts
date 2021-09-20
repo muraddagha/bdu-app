@@ -12,6 +12,21 @@ export class SidebarComponent implements OnInit {
 
   @Input() sidebarType: SidebarType = SidebarType.Education
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    this.chnageType();
+    this.changeSidebarTypeNavigationSwitch();
+  }
+
+  ngOnInit(): void {
+  }
+  public chnageType(): void {
+    this.activatedRoute.firstChild.data.pipe(map(val => val["sidebarType"])).subscribe(res => {
+      if (res != null || res != undefined) {
+        this.sidebarType = res
+      }
+    })
+  }
+
+  public changeSidebarTypeNavigationSwitch() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.activatedRoute.firstChild.data.pipe(map(val => val["sidebarType"])).subscribe(res => {
@@ -21,9 +36,6 @@ export class SidebarComponent implements OnInit {
         })
       }
     });
-  }
-
-  ngOnInit(): void {
   }
 
 }
