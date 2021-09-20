@@ -234,3 +234,62 @@
     padding-top: 100px;
   }
 }
+
+.dialog {
+  max-width: 800px;
+  background-color: white;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  .dialog-header {
+    background-color: $primary-color;
+    padding: 8px 14px;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    h2 {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    button {
+      color: white;
+    }
+  }
+  .dialog-body {
+    background-color: $color-white;
+    .dialog-content {
+      padding-block: 58px;
+      padding-inline: 127px;
+      text-align: center;
+      .status {
+        margin-bottom: 40px;
+        border-radius: 40px;
+        color: #28b650;
+        padding: 8px 28px;
+        max-width: 140px;
+        border: 1px solid #28b650;
+        margin-inline: auto;
+        h2 {
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        color: #000000;
+      }
+    }
+  }
+  .dialog-footer {
+    background-color: $color-white;
+    padding-right: 32px;
+    a {
+      color: #6d6d6d;
+      border: 1px solid #d8d8d8;
+      border-radius: 40px;
+      padding: 8px 24px;
+      background-color: #f6faff;
+    }
+  }
+}

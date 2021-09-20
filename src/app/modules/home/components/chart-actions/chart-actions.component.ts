@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CurriculumDialogComponent } from '../curriculum-dialog/curriculum-dialog.component';
 
 @Component({
   selector: 'app-chart-actions',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartActionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  public openModal() {
+    this.dialog.open(CurriculumDialogComponent, {
+      data: {
+
+      },
+      panelClass: 'referance-modal',
+      // maxHeight: '90vh',
+      // autoFocus: false
+    })
+
   }
 
 }

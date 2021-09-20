@@ -11,6 +11,8 @@ import { LessonHeldComponent } from './components/lesson-held/lesson-held.compon
 import { ChartAreaComponent } from './components/chart-area/chart-area.component';
 import { ChartActionsComponent } from './components/chart-actions/chart-actions.component';
 import { RouterModule } from '@angular/router';
+import { CurriculumDialogComponent } from './components/curriculum-dialog/curriculum-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -25,11 +27,13 @@ import { RouterModule } from '@angular/router';
     HomeContainerComponent,
     LessonHeldComponent,
     ChartAreaComponent,
-    ChartActionsComponent
+    ChartActionsComponent,
+    CurriculumDialogComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatDialogModule
   ],
 })
 export class HomeModule { }

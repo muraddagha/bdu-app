@@ -9,7 +9,7 @@ import { ISmallInfoData } from './models/small-info-data.model';
 })
 export class SmallInfoComponent implements OnInit {
 
-  @Input() type: SmallInfoType = SmallInfoType.FreelanceWork
+  @Input() type: SmallInfoType = SmallInfoType.Assignments
   @Input() data: ISmallInfoData[]
   constructor() { }
 

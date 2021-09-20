@@ -21,8 +21,8 @@ export class DocumentAppealComponent implements OnInit {
       //   type: type
       // },
       panelClass: 'referance-modal',
-      maxHeight: '90vh',
-      autoFocus: false
+      // maxHeight: '90vh',
+      // autoFocus: false
     });
 
 

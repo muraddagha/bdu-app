@@ -1,4 +1,4 @@
 export enum SmallInfoType {
-    FreelanceWork,
-    Kollokvium
+    Assignments,
+    Colloquium
 }
