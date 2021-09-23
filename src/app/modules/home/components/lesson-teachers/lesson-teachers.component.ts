@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICourseOverviewTeacherModel } from 'src/app/shared/models/course-overview/course-overview-teacher.model';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'app-lesson-teachers',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LessonTeachersComponent implements OnInit {
 
-  constructor() { }
+  public lessonTeachers: ICourseOverviewTeacherModel[] = []
+  constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
+    this.getLessonTeachers()
+  }
+
+  public getLessonTeachers() {
+    this.homeService.lessonTeachers.subscribe(res => {
+      this.lessonTeachers = res
+    })
   }
 
 }

@@ -13,6 +13,7 @@ import { ChartActionsComponent } from './components/chart-actions/chart-actions.
 import { RouterModule } from '@angular/router';
 import { CurriculumDialogComponent } from './components/curriculum-dialog/curriculum-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TotalPointPipe } from './pipes/total-point.pipe';
 
 
 
@@ -28,7 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     LessonHeldComponent,
     ChartAreaComponent,
     ChartActionsComponent,
-    CurriculumDialogComponent
+    CurriculumDialogComponent,
+    TotalPointPipe
   ],
   imports: [
     CommonModule,

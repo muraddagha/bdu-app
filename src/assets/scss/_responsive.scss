@@ -1,0 +1,10 @@
+@media only screen and(max-width:1368px) {
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+    row-gap: 20px;
+  }
+  .responsvie-flex {
+    flex-wrap: wrap !important;
+    row-gap: 20px;
+  }
+}

@@ -5,29 +5,16 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="card-body-item">
-            <h6>Davamiyyət</h6>
-            <p>8</p>
-        </div>
-        <div class="card-body-item">
-            <h6>Aktivlik</h6>
-            <p>14</p>
-        </div>
-        <div class="card-body-item">
-            <h6>Kollokuium</h6>
-            <p>8</p>
-        </div>
-        <div class="card-body-item">
-            <h6>Sərbəst iş</h6>
-            <p>8</p>
-        </div>
-        <div class="card-body-item">
-            <h6>İmtahan</h6>
-            <p>8</p>
-        </div>
+        <ng-container *ngFor="let reportItem  of lessonReports">
+            <div *ngIf="reportItem.evaluationId!=1 && reportItem.evaluationId!=2" class="card-body-item">
+                <h6>{{reportItem.evaluationName}}</h6>
+                <p>{{reportItem.averagePoint}}</p>
+            </div>
+        </ng-container>
+
     </div>
     <div class="card-footer d-flex align-center">
         <h6 class="text-uppercase">Yekun</h6>
-        <span class="total">40</span>
+        <span class="total">{{lessonReports|totalPoint}}</span>
     </div>
 </div>

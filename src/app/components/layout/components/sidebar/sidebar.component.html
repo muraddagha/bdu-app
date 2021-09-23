@@ -9,23 +9,11 @@
             </div>
         </div>
         <div *ngIf="sidebarType==0" class="sidebar-body">
-            <div class="sidebar-body-item">
+            <div *ngFor="let lesson of lessons" class="sidebar-body-item">
                 <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
-                <div class="item-title-count " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a [routerLink]="['']">Riyazi Analiz </a>
+                <div class="item-title-count" [ngClass]="{'active':lesson.courseId==activeCourse}">
+                    <a (click)="changeLessonData($event,lesson.courseId)" href="#">{{lesson.subjectName}}</a>
                 </div>
-            </div>
-            <div class="sidebar-body-item">
-                <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
-                <a href="#">Fizika </a>
-            </div>
-            <div class="sidebar-body-item">
-                <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
-                <a href="#">Kimya </a>
-            </div>
-            <div class="sidebar-body-item">
-                <img src="assets/images/icons/sidebar-icon.svg" alt="sidebar-icon">
-                <a href="#">Informatika </a>
             </div>
         </div>
         <div *ngIf="sidebarType==1" class="sidebar-body">

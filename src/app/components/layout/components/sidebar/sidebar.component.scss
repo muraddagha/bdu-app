@@ -58,10 +58,11 @@
         height: 32px;
         position: absolute;
         left: 0;
-        top: 0;
+        top: 50%;
         border-top-right-radius: 100px;
         border-bottom-right-radius: 100px;
         background-color: #d3d3fd;
+        transform: translateY(-50%);
       }
       background-color: $secondary-light-color;
       a,

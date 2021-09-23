@@ -14,9 +14,11 @@ export class LessonDropdownComponent implements OnInit {
 
   public showContent($event) {
     $event.preventDefault();
-    $event.target.children[1].classList.toggle("rotate-chevron")
-    if ($event.target.nextElementSibling != null && $event.target.nextElementSibling.classList[0] == "dropdown-item") {
-      $event.target.nextElementSibling.classList.toggle("active")
+    if ($event.target.classList[0] == "lesson-card-item-text") {
+      $event.target.children[1].classList.toggle("rotate-chevron")
+      if ($event.target.nextElementSibling != null && $event.target.nextElementSibling.classList[0] == "dropdown-item") {
+        $event.target.nextElementSibling.classList.toggle("active")
+      }
     }
   }
 }

@@ -5,31 +5,13 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="card-body-item-2 d-flex align-center column-gap-15">
+        <div *ngFor="let teacher of lessonTeachers" class="card-body-item-2 d-flex align-center column-gap-15">
             <div class="card-body-item-img">
                 <img src="assets/images/home/teacher.svg" alt="teacher">
             </div>
             <div class="card-body-item-content">
-                <h6>Əsadova Tahirə</h6>
-                <p>Mühazirə</p>
-            </div>
-        </div>
-        <div class="card-body-item-2 d-flex align-center column-gap-15">
-            <div class="card-body-item-img">
-                <img src="assets/images/home/teacher.svg" alt="teacher">
-            </div>
-            <div class="card-body-item-content">
-                <h6>Əsadova Tahirə</h6>
-                <p>Mühazirə</p>
-            </div>
-        </div>
-        <div class="card-body-item-2 d-flex align-center column-gap-15">
-            <div class="card-body-item-img">
-                <img src="assets/images/home/teacher.svg" alt="teacher">
-            </div>
-            <div class="card-body-item-content">
-                <h6>Əsadova Tahirə</h6>
-                <p>Mühazirə</p>
+                <h6>{{teacher.teacherName}}</h6>
+                <p>{{teacher.lessonTypeNameAz}}</p>
             </div>
         </div>
     </div>

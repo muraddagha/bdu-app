@@ -23,7 +23,7 @@ import { LessonDropdownComponent } from './components/lesson-dropdown/lesson-dro
   imports: [
     CommonModule,
     LessonAppealRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ]
 })
 export class LessonAppealModule { }

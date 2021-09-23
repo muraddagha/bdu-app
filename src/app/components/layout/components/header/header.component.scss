@@ -65,8 +65,20 @@ header {
               font-size: 11px;
             }
           }
+          .menu-btn {
+            display: none;
+          }
         }
       }
     }
+  }
+}
+
+@media only screen and(max-width:1368px) {
+  .navigations {
+    display: none !important;
+  }
+  .menu-btn {
+    display: block !important;
   }
 }

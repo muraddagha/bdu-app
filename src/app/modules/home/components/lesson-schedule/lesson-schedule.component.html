@@ -1,27 +1,17 @@
 <div class="card radius-20" style="background-image: url('assets/images/home/lesson-schedule-bg.jpg');">
     <div class="card-title-area">
         <div class="card-title text-color-white">
-            <h2 class="text-uppercase text-center font-size-16 font-500">FƏNN MÜƏLLİMLƏRİ</h2>
+            <h2 class="text-uppercase text-center font-size-16 font-500">GÜNÜN DƏRS CƏDVƏLİ</h2>
         </div>
     </div>
     <div class="card-body card-body-padding-2 text-color-white">
         <div class="card-body-date">
             <h6>14.07.2021</h6>
         </div>
-        <div class="card-body-item d-flex justify-between">
-            <span>Kimya</span>
-            <span>08:30</span>
-            <span>Korus 1 / aud. 65 </span>
-        </div>
-        <div class="card-body-item d-flex justify-between">
-            <span>Kimya</span>
-            <span>08:30</span>
-            <span>Korus 1 / aud. 65 </span>
-        </div>
-        <div class="card-body-item d-flex justify-between">
-            <span>Kimya</span>
-            <span>08:30</span>
-            <span>Korus 1 / aud. 65 </span>
+        <div *ngFor="let schedule of lessonSchedule" class="card-body-item d-flex justify-between align-center">
+            <span>{{schedule.subjectName}}</span>
+            <span>{{schedule.startTime}}</span>
+            <span>{{schedule.roomName}}</span>
         </div>
     </div>
     <div class="card-footer week-type d-flex align-center flex-end text-color-white">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'app-overall-average',
@@ -7,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverallAverageComponent implements OnInit {
 
-  constructor() {
+  public uomg: string = ""
+  constructor(private homeService: HomeService) {
   }
 
   ngOnInit(): void {
+    this.getUomg();
   }
 
+  public getUomg(): void {
+    this.homeService.uomg.subscribe(res => {
+      this.uomg = res
+    })
+  }
 }
