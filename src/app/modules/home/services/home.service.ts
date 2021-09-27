@@ -15,7 +15,6 @@ export class HomeService {
   public courseMeetings: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   public uomg: BehaviorSubject<string> = new BehaviorSubject<string>("");
   public isContentChanged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  public activeCourse: BehaviorSubject<string> = new BehaviorSubject<string>("");
   constructor(private apiService: ApiService) { }
 
   public changeContent(courseId: string) {
@@ -26,7 +25,6 @@ export class HomeService {
       this.uomg.next(res.kv.uomg)
     });
     this.isContentChanged.next(true)
-    this.activeCourse.next(courseId);
   }
 
 }

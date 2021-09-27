@@ -3,7 +3,7 @@ import { ICourseOverviewTblModel } from "./course-overview/course-overview-tbl.m
 
 export interface IResponseModel {
     kv: ICourseOverviewKvModel;
-    tbl: ICourseOverviewTblModel[];
+    tbl: any[];
     err: any[];
     errMessage: any[];
 }

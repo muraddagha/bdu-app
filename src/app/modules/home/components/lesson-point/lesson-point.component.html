@@ -4,7 +4,7 @@
             <h2 class="text-uppercase text-center font-size-16 font-500">FƏNN BALI</h2>
         </div>
     </div>
-    <div class="card-body">
+    <div class="card-body" *ngIf="lessonReports!=null">
         <ng-container *ngFor="let reportItem  of lessonReports">
             <div *ngIf="reportItem.evaluationId!=1 && reportItem.evaluationId!=2" class="card-body-item">
                 <h6>{{reportItem.evaluationName}}</h6>

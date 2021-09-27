@@ -11,9 +11,13 @@ export class SmallInfoComponent implements OnInit {
 
   @Input() type: SmallInfoType = SmallInfoType.Assignments
   @Input() data: ISmallInfoData[]
-  constructor() { }
+  constructor() {
+      
+     }
 
   ngOnInit(): void {
   }
+
+  
 
 }

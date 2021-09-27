@@ -14,53 +14,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Primitiv rekursiv funksiya. Müxtəlif pilləli ...</td>
-                    <td>Müh.</td>
-                    <td>08.06.21 / 12:00</td>
-                    <td>No 112</td>
-                    <td>i.e</td>
-                    <td>Verilənlərin axtarılması...pdf</td>
-                </tr>
-                <tr>
-                    <td>Primitiv rekursiv funksiya. Müxtəlif pilləli ...</td>
-                    <td>Müh.</td>
-                    <td>08.06.21 / 12:00</td>
-                    <td>No 112</td>
-                    <td>i.e</td>
-                    <td>Verilənlərin axtarılması...pdf</td>
-                </tr>
-                <tr>
-                    <td>Primitiv rekursiv funksiya. Müxtəlif pilləli ...</td>
-                    <td>Müh.</td>
-                    <td>08.06.21 / 12:00</td>
-                    <td>No 112</td>
-                    <td><span>Distant</span></td>
-                    <td>Verilənlərin axtarılması...pdf</td>
-                </tr>
-                <tr>
-                    <td>Primitiv rekursiv funksiya. Müxtəlif pilləli ...</td>
-                    <td>Müh.</td>
-                    <td>08.06.21 / 12:00</td>
-                    <td>No 112</td>
-                    <td>i.e</td>
-                    <td>Verilənlərin axtarılması...pdf</td>
-                </tr>
-                <tr>
-                    <td>Primitiv rekursiv funksiya. Müxtəlif pilləli ...</td>
-                    <td>Müh.</td>
-                    <td>08.06.21 / 12:00</td>
-                    <td>No 112</td>
-                    <td>i.e</td>
-                    <td>Verilənlərin axtarılması...pdf</td>
-                </tr>
-                <tr>
-                    <td>Primitiv rekursiv funksiya. Müxtəlif pilləli ...</td>
-                    <td>Müh.</td>
-                    <td>08.06.21 / 12:00</td>
-                    <td>No 112</td>
-                    <td>i.e</td>
-                    <td>Verilənlərin axtarılması...pdf</td>
+                <tr *ngFor="let content of lessonActivites">
+                    <td>{{content.topicNames}}</td>
+                    <td>{{content.lessonTypeCode}}</td>
+                    <td>{{content.meetingDate}} / {{content.startTime}}</td>
+                    <td>{{content.roomName}}</td>
+                    <td>{{content.studentPoint}}</td>
+                    <td>{{content.topicFileNames}}</td>
                 </tr>
             </tbody>
         </table>

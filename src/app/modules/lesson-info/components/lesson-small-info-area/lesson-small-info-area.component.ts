@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LessonInfoService } from '../../services/lesson-info.service';
 import { ISmallInfoData } from '../small-info/models/small-info-data.model';
 
 @Component({
@@ -9,46 +10,23 @@ import { ISmallInfoData } from '../small-info/models/small-info-data.model';
 export class LessonSmallInfoAreaComponent implements OnInit {
   public freelanceWorkData: ISmallInfoData[]
   public kollokviumData: ISmallInfoData[]
-  constructor() {
-
-    this.freelanceWorkData = [
-      {
-        date: '2021-02-12',
-        lesson: 'İnformasiya təhlükəsizliyi',
-        isSuccess: false
-      },
-      {
-        date: '2021-02-12',
-        lesson: 'İnformasiya təhlükəsizliyi',
-        isSuccess: true
-      },
-      {
-        date: '2021-02-12',
-        lesson: 'İnformasiya təhlükəsizliyi',
-        isSuccess: true
-      },
-    ]
-    this.kollokviumData = [
-      {
-        date: '15.04.21',
-        lesson: 'Təhlükəzlik tədbirləri',
-        point: 7
-      },
-      {
-        date: '15.04.21',
-        lesson: 'Təhlükəzlik tədbirləri',
-        point: 9
-      },
-      {
-        date: '15.04.21',
-        lesson: 'Təhlükəzlik tədbirləri',
-        point: 4
-      },
-
-    ]
+  constructor(private lessonInfoService:LessonInfoService) {
   }
 
   ngOnInit(): void {
+    // this.getSubWorkStudentPointList();
+  }
+
+  public getSubWorkStudentPointList(){
+    this.lessonInfoService.subWork.subscribe(res=>{
+      this.freelanceWorkData=res
+    })
+  }
+
+  public getColloquiumStudentPointList(){
+    this.lessonInfoService.colloquium.subscribe(res=>{
+      this.kollokviumData=res
+    })
   }
 
 }

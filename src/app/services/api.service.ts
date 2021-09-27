@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { IResponseModel } from '../shared/models/response.model';
@@ -13,9 +13,12 @@ export class ApiService {
   public header = {}
   constructor(private http: HttpClient) {
     let token = localStorage.getItem("auth")
-    this.header = {
-      "auth": token
+    if(token!=null){
+      this.header = {
+        "auth": token
+      }
     }
+    
   }
 
   public getStudentTranscript(typeCode: string, lang?: string): Observable<any> {
@@ -33,5 +36,41 @@ export class ApiService {
       }
     }
     return this.http.post<IResponseModel>(environment.apiUrl + "GetCourseOverviewForStudents", params, { headers: this.header });
+  }
+
+  public getCourseMeetingListForStudent(courseId:string):Observable<IResponseModel>{
+    let params = {
+      kv: {
+        courseId: courseId
+      }
+    }
+    return this.http.post<IResponseModel>(environment.apiUrl+"GetCourseMeetingListForStudent",params,{headers:this.header});
+  }
+
+  public getEvaluationListByOverview(courseId:string):Observable<IResponseModel>{
+    let params = {
+      kv: {
+        courseId: courseId
+      }
+    }
+    return this.http.post<IResponseModel>(environment.apiUrl +"GetEvaluationListByOverview",params,{headers:this.header})
+  }
+
+  public getSubWorkStudentPointList(courseId:string):Observable<IResponseModel>{
+    let params = {
+      kv: {
+        courseId: courseId
+      }
+    }
+    return this.http.post<IResponseModel>(environment.apiUrl +"GetSubWorkStudentPointList",params,{headers:this.header})
+  }
+
+  public getColloquiumStudentPointList(courseId:string):Observable<IResponseModel>{
+    let params = {
+      kv: {
+        courseId: courseId
+      }
+    }
+    return this.http.post<IResponseModel>(environment.apiUrl +"GetColloquiumStudentPointList",params,{headers:this.header})
   }
 }
