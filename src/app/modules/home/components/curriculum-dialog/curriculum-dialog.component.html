@@ -1,18 +1,27 @@
 <div class="dialog">
-    <div class="dialog-header d-flex justify-between">
-        <h2>Təhsil alma barədə arayış</h2>
-        <button (click)="closeDialog()">X</button>
+  <div class="dialog-header d-flex justify-between">
+    <h2>Fərdi tədris planı</h2>
+    <button (click)="closeDialog()">X</button>
+  </div>
+  <div class="dialog-body">
+    <div class="dialog-body-header d-flex align-center justify-around">
+      <button class="year-item active">2021 / 2022</button>
+      <button class="year-item">2021 / 2022</button>
+      <button class="year-item">2021 / 2022</button>
+      <button class="year-item">2021 / 2022</button>
+      <button class="year-item">2021 / 2022</button>
     </div>
-    <div class="dialog-body">
-        <div class="dialog-content">
-            <div class="status">
-                <h2>İcra edildi</h2>
-            </div>
-            <p>Hörmətli Məmməd bəy, sizin arayışınız hazırdır. Arayışınızı dekanlığa yaxınlaşaraq əldə edə və ya onlayn
-                qaydada sistemdən yükləyə bilərsiniz.</p>
-        </div>
+    <div class="dialog-content">
+      <div class="status">
+        <h2>İcra edildi</h2>
+      </div>
+      <p>
+        Hörmətli Məmməd bəy, sizin arayışınız hazırdır. Arayışınızı dekanlığa
+        yaxınlaşaraq əldə edə və ya onlayn qaydada sistemdən yükləyə bilərsiniz.
+      </p>
     </div>
-    <!-- <div class="dialog-footer d-flex flex-end">
+  </div>
+  <!-- <div class="dialog-footer d-flex flex-end">
         <a href="#">arayış PDF</a>
     </div> -->
 </div>

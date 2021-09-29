@@ -1,0 +1,33 @@
+@import "/src/assets/scss/variables";
+
+.dialog {
+  max-width: 1000px;
+}
+.dialog-body-header {
+  padding-block: 20px;
+  max-width: 800px;
+  margin-inline: auto;
+  .year-item {
+    padding: 5px 20px;
+    background-color: #7c5be0;
+    border-radius: 40px;
+    color: $color-white;
+    font-size: 16px;
+    position: relative;
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        width: 28px;
+        background-color: $primary-color;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        right: -32px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .active {
+    background-color: $primary-color !important;
+  }
+}
