@@ -1,71 +1,155 @@
 <header>
-    <div class="container">
-        <div class="header-top d-flex justify-between align-center">
-            <div class="header-top-logo d-flex align-center column-gap-15">
-                <img src="assets/images/layout/logo.svg" alt="logo">
-                <a [routerLink]="['']" class="logo-title">
-                    <h2 class="font-size-17">Bakı Dövlət Universiteti</h2>
-                    <h4 class="font-size-14 text-color-primary font-500 font-italic">Təhsilin Elektron İdarə Olunması
-                        Sistemi</h4>
-                </a>
-            </div>
-            <div class="header-top-signature d-flex align-center column-gap-15">
-                <div class="signature-text font-italic">
-                    <h4 class="font-size-16 font-300">“Təhsil millətin gələcəyidir”</h4>
-                    <h6 class="font-size-14 font-300">Ümummilli Lider Heydər Əliyev</h6>
-                </div>
-                <img src="assets/images/layout/signature.svg" alt="signature">
-            </div>
+  <div class="container">
+    <div class="header-top d-flex justify-between align-center">
+      <div class="header-top-logo d-flex align-center column-gap-15">
+        <img src="assets/images/layout/logo.svg" alt="logo" />
+        <a [routerLink]="['']" class="logo-title">
+          <h2 class="font-size-17">{{ user?.university.name.az }}</h2>
+          <h4 class="font-size-14 text-color-primary font-500 font-italic">
+            Təhsilin Elektron İdarə Olunması Sistemi
+          </h4>
+        </a>
+      </div>
+      <div class="header-top-signature d-flex align-center column-gap-15">
+        <div class="signature-text font-italic">
+          <h4 class="font-size-16 font-300">“Təhsil millətin gələcəyidir”</h4>
+          <h6 class="font-size-14 font-300">Ümummilli Lider Heydər Əliyev</h6>
         </div>
-        <div class="header-nav d-flex justify-between align-center bg-color-primary radius-10 text-color-white">
-            <div class="faculty">
-                <h2 class="font-size-16 font-italic font-300">Kompüter elimləri</h2>
-            </div>
-            <nav class="navigations d-flex column-gap-20 align-center">
-                <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tədris</a>
-                <a [routerLink]="['schedule']" routerLinkActive="active"
-                    [routerLinkActiveOptions]="{exact: true}">Cədvəl</a>
-                <a href="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Hesabatlar</a>
-                <a href="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Təkliflər</a>
-                <a [routerLink]="['appeals']" routerLinkActive="active"
-                    [routerLinkActiveOptions]="{exact: true}">Müraciətlər</a>
-                <a href="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Kitabxana</a>
-                <a href="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Ödəmələr</a>
-            </nav>
-            <div class="user-info-area d-flex align-center justify-between">
-                <div class="user-info d-flex align-center">
-                    <div class="user-name radius-20">
-                        <h4>Məmmədzadə Məmməd</h4>
-                    </div>
-
-                    <div class="user-pp-notification d-flex align-center">
-                        <img src="assets/images/layout/pp.svg" alt="">
-                        <button class="notification">
-                            <img src="assets/images/icons/bell.svg" alt="">
-                            <div class="notification-count">1</div>
-                        </button>
-                        <button><img src="assets/images/icons/setting.svg" alt=""></button>
-                        <button [matMenuTriggerFor]="menu" class="menu-btn"><img src="assets/images/icons/menu-bar.svg"
-                                alt=""></button>
-                        <mat-menu #menu="matMenu">
-                            <a mat-menu-item [routerLink]="['']" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Tədris</a>
-                            <a mat-menu-item [routerLink]="['schedule']" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Cədvəl</a>
-                            <a mat-menu-item href="#" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Hesabatlar</a>
-                            <a mat-menu-item href="#" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Təkliflər</a>
-                            <a mat-menu-item [routerLink]="['appeals']" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Müraciətlər</a>
-                            <a mat-menu-item href="#" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Kitabxana</a>
-                            <a mat-menu-item href="#" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Ödəmələr</a>
-                        </mat-menu>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <img src="assets/images/layout/signature.svg" alt="signature" />
+      </div>
     </div>
+    <div
+      class="
+        header-nav
+        d-flex
+        justify-between
+        align-center
+        bg-color-primary
+        radius-10
+        text-color-white
+      "
+    >
+      <div class="faculty">
+        <h2 class="font-size-16 font-italic font-300">
+          {{ user?.organization.name.az }}
+        </h2>
+      </div>
+      <nav class="navigations d-flex column-gap-20 align-center">
+        <a
+          [routerLink]="['']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Tədris</a
+        >
+        <a
+          [routerLink]="['schedule']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Cədvəl</a
+        >
+        <a
+          href="#"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Hesabatlar</a
+        >
+        <a
+          href="#"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Təkliflər</a
+        >
+        <a
+          [routerLink]="['appeals']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Müraciətlər</a
+        >
+        <a
+          href="#"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Kitabxana</a
+        >
+        <a
+          href="#"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Ödəmələr</a
+        >
+      </nav>
+      <div class="user-info-area d-flex align-center justify-between">
+        <div class="user-info d-flex align-center">
+          <div class="user-name radius-20">
+            <h4>{{ user?.firstname }} {{ user?.lastname }}</h4>
+          </div>
+
+          <div class="user-pp-notification d-flex align-center">
+            <img src="assets/images/layout/pp.svg" alt="" />
+            <button class="notification">
+              <img src="assets/images/icons/bell.svg" alt="" />
+              <div class="notification-count">1</div>
+            </button>
+            <button>
+              <img src="assets/images/icons/setting.svg" alt="" />
+            </button>
+            <button [matMenuTriggerFor]="menu" class="menu-btn">
+              <img src="assets/images/icons/menu-bar.svg" alt="" />
+            </button>
+            <mat-menu #menu="matMenu">
+              <a
+                mat-menu-item
+                [routerLink]="['']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Tədris</a
+              >
+              <a
+                mat-menu-item
+                [routerLink]="['schedule']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Cədvəl</a
+              >
+              <a
+                mat-menu-item
+                href="#"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Hesabatlar</a
+              >
+              <a
+                mat-menu-item
+                href="#"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Təkliflər</a
+              >
+              <a
+                mat-menu-item
+                [routerLink]="['appeals']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Müraciətlər</a
+              >
+              <a
+                mat-menu-item
+                href="#"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Kitabxana</a
+              >
+              <a
+                mat-menu-item
+                href="#"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Ödəmələr</a
+              >
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>

@@ -57,10 +57,10 @@ export class SidebarComponent implements OnInit {
   public getStudentTranscript(): void {
     this.apiService.getStudentTranscript("CURRENT").pipe(map(val => val[0].r)).subscribe(res => {
       this.lessons = res
-      if(this.routerUrl=="/" || this.routerUrl==`/?tkn=${this.token}`){
+      if(this.routerUrl=="/student_education" || this.routerUrl==`/student_education?tkn=${this.token}`){
       this.homeService.changeContent(res[0].courseId);
       }
-      if(this.routerUrl=="/lesson-info" || this.routerUrl==`/lesson-info?tkn=${this.token}`){
+      if(this.routerUrl=="/student_education/lesson-info" || this.routerUrl==`/student_education/lesson-info?tkn=${this.token}`){
       this.lessonInfoService.changeContent(res[0].courseId);
       }
       this.sidebarService.setActiveLesson(res[0].courseId);
@@ -72,10 +72,10 @@ export class SidebarComponent implements OnInit {
     event.preventDefault();
     
     switch(this.routerUrl){
-      case "/":
+      case "/student_education":
         this.homeService.changeContent(courseId);
         break;
-      case "/lesson-info":
+      case "/student_education/lesson-info":
       this.lessonInfoService.changeContent(courseId);
         break;
         default:

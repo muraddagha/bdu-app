@@ -8,7 +8,7 @@ import { ScheduleComponent } from './schedule/components/schedule/schedule.compo
 const routes: Routes = [
   {
     // data: { templateHeaderType: 1 },
-    path: '', component: ModulesComponent,
+    path: 'student_education', component: ModulesComponent,
     children: [
       {
         path: '', component: HomeComponent,

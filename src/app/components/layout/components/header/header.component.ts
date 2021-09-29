@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { IUser } from 'src/app/shared/models/user/user.model';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  public user:IUser
+  constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
+    this.getUserData();
+  }
+
+  public getUserData(){
+    this.apiService.getUserData().subscribe(res=>{
+      this.user=res
+      console.log(res);
+      
+    })
   }
 
 }
