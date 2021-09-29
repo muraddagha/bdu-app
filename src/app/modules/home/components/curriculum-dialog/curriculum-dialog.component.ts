@@ -38,7 +38,6 @@ export class CurriculumDialogComponent implements OnInit {
       .getStudentEducationPlanReport(educationYearId)
       .subscribe((res) => {
         this.educationYearReport = res;
-        console.log(res);
       });
     this.activeReport = educationYearId;
   }

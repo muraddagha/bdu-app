@@ -45,6 +45,12 @@ header {
         }
         .user-pp-notification {
           column-gap: 7px;
+          .pp {
+            width: 28px;
+            height: 28px;
+            border-radius: 20px;
+            object-fit: cover;
+          }
           .notification {
             position: relative;
             margin-right: 10px;
