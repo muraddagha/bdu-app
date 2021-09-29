@@ -1,12 +1,14 @@
 @import "/src/assets/scss/variables";
 
 .dialog {
-  max-width: 1000px;
+  max-width: initial !important;
+  width: 60vw !important;
 }
 .dialog-body-header {
   padding-block: 20px;
-  max-width: 800px;
   margin-inline: auto;
+  column-gap: 20px;
+  justify-content: center;
   .year-item {
     padding: 5px 20px;
     background-color: #7c5be0;
@@ -14,20 +16,69 @@
     color: $color-white;
     font-size: 16px;
     position: relative;
-    &:not(:last-child) {
-      &::after {
-        content: "";
-        width: 28px;
-        background-color: $primary-color;
-        height: 2px;
-        position: absolute;
-        top: 50%;
-        right: -32px;
-        transform: translateY(-50%);
-      }
-    }
+    // &:not(:last-child) {
+    //   &::after {
+    //     content: "";
+    //     width: 28px;
+    //     background-color: $primary-color;
+    //     height: 2px;
+    //     position: absolute;
+    //     top: 50%;
+    //     right: -32px;
+    //     transform: translateY(-50%);
+    //   }
+    // }
   }
   .active {
     background-color: $primary-color !important;
+  }
+}
+.dialog-content {
+  margin-inline: 40px;
+  border-top: 1px solid #d8d9f7;
+  padding-block: 20px !important;
+  padding-inline: 0 !important;
+  .dialog-content-header {
+    padding-inline: 127px;
+    h2 {
+      font-size: 18px !important;
+      font-weight: 500 !important;
+    }
+    .dialog-content-header-items {
+      margin-top: 10px;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-inline: auto;
+      .dialog-content-header-item {
+        justify-content: space-between;
+        font-size: 15px !important;
+      }
+    }
+  }
+  .dialog-content-body {
+    h2 {
+      font-weight: 500 !important;
+      font-size: 16px !important;
+    }
+  }
+}
+
+.second-table {
+  margin-top: 20px;
+  table {
+    border-collapse: collapse;
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 5px;
+      font-size: 13px !important;
+    }
+    td {
+      font-weight: 400 !important;
+    }
+    th {
+      font-weight: 500 !important;
+    }
   }
 }

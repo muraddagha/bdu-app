@@ -5,21 +5,136 @@
   </div>
   <div class="dialog-body">
     <div class="dialog-body-header d-flex align-center justify-around">
-      <button class="year-item active">2021 / 2022</button>
-      <button class="year-item">2021 / 2022</button>
-      <button class="year-item">2021 / 2022</button>
-      <button class="year-item">2021 / 2022</button>
-      <button class="year-item">2021 / 2022</button>
+      <button
+        (click)="changePlanReport(eduYear.id)"
+        *ngFor="let eduYear of educationYears"
+        class="year-item"
+        [ngClass]="{ active: activeReport == eduYear.id }"
+      >
+        {{ eduYear.name }}
+      </button>
     </div>
-    <div class="dialog-content">
-      <div class="status">
-        <h2>İcra edildi</h2>
+    <ng-container *ngIf="educationYearReport?.tbl.length != 0">
+      <div class="dialog-content">
+        <div class="dialog-content-header">
+          <h2>Tələbənin fərdi tədris planı</h2>
+          <div class="dialog-content-header-items">
+            <div
+              class="
+                dialog-content-header-item
+                d-flex
+                align-center
+                column-gap-20
+              "
+            >
+              <span>Fakültə:</span>
+              <span>{{ educationYearReport?.kv.facultyName }}</span>
+            </div>
+            <div
+              class="
+                dialog-content-header-item
+                d-flex
+                align-center
+                column-gap-20
+              "
+            >
+              <span>İxtisas:</span>
+              <span>{{ educationYearReport?.kv.specialityName }}</span>
+            </div>
+            <div
+              class="
+                dialog-content-header-item
+                d-flex
+                align-center
+                column-gap-20
+              "
+            >
+              <span>Tələbə:</span>
+              <span>{{ educationYearReport?.kv.studentFullname }}</span>
+            </div>
+            <div
+              class="
+                dialog-content-header-item
+                d-flex
+                align-center
+                column-gap-20
+              "
+            >
+              <span>Tələbənin tədris ili:</span>
+              <span>{{ educationYearReport?.kv.educationYearName }}</span>
+            </div>
+            <div
+              class="
+                dialog-content-header-item
+                d-flex
+                align-center
+                column-gap-20
+              "
+            >
+              <span>Təhsil ili:</span>
+              <span>{{ educationYearReport?.kv.kurs }}</span>
+            </div>
+            <div
+              class="
+                dialog-content-header-item
+                d-flex
+                align-center
+                column-gap-20
+              "
+            >
+              <span>Seçilmiş fənn və müəllimlər:</span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="dialog-content-body">
+          <h2>I semestr</h2>
+
+          <div class="second-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>№</th>
+                  <th>Fənnin kodu</th>
+                  <th>Fənnin adı</th>
+                  <th>Kredit sayı</th>
+                  <th>Kafedra</th>
+                  <th>Müəllimin vəzifəsi,soyadı və adı</th>
+                  <th>Qeyd</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of educationYearReport?.tbl[0].r">
+                  <td>
+                    {{ item.subjectCode }}
+                  </td>
+                  <td></td>
+                  <td>
+                    {{ item.subjectName }}
+                  </td>
+                  <td>
+                    {{ item.credit }}
+                  </td>
+                  <td>
+                    {{ item.departmentName }}
+                  </td>
+                  <td>
+                    {{ item.teachers }}
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <p>
-        Hörmətli Məmməd bəy, sizin arayışınız hazırdır. Arayışınızı dekanlığa
-        yaxınlaşaraq əldə edə və ya onlayn qaydada sistemdən yükləyə bilərsiniz.
-      </p>
-    </div>
+    </ng-container>
+
+    <ng-container *ngIf="educationYearReport?.tbl.length == 0">
+      <div class="dialog-content">
+        <h2>Data Yoxdur</h2>
+      </div>
+    </ng-container>
   </div>
   <!-- <div class="dialog-footer d-flex flex-end">
         <a href="#">arayış PDF</a>
