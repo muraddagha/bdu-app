@@ -23,8 +23,11 @@ export class HomeService {
       this.reportJournal.next(res.tbl.filter(val => val.tn == "v_ReportJournalOverview").map(val => val.r)[0])
       this.courseMeetings.next(res.tbl.filter(val => val.tn == "coursemeetings").map(val => val.r)[0])
       this.uomg.next(res.kv.uomg)
+    console.log(res);
+
     });
     this.isContentChanged.next(true)
+    
   }
 
 }

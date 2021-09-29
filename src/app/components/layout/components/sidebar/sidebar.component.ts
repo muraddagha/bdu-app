@@ -20,6 +20,7 @@ export class SidebarComponent implements OnInit {
   public lessons: any[];
   public activeCourse: string = ""
   public routerUrl:any;
+  public token:string;
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private apiService: ApiService,
@@ -34,6 +35,8 @@ export class SidebarComponent implements OnInit {
         this.changeLessonDataNavChange();
       }
     });
+    this.token=localStorage.getItem("auth").split(" ")[1]
+    
   }
 
   ngOnInit(): void {
@@ -54,18 +57,13 @@ export class SidebarComponent implements OnInit {
   public getStudentTranscript(): void {
     this.apiService.getStudentTranscript("CURRENT").pipe(map(val => val[0].r)).subscribe(res => {
       this.lessons = res
-      
-      switch(this.routerUrl){
-        case "/":
-          this.homeService.changeContent(res[0].courseId);
-          break;
-        case "/lesson-info":
-        this.lessonInfoService.changeContent(res[0].courseId);
-          break;
-          default:
-            break;
+      if(this.routerUrl=="/" || this.routerUrl==`/?tkn=${this.token}`){
+      this.homeService.changeContent(res[0].courseId);
       }
-    this.sidebarService.setActiveLesson(res[0].courseId);
+      if(this.routerUrl=="/lesson-info" || this.routerUrl==`/lesson-info?tkn=${this.token}`){
+      this.lessonInfoService.changeContent(res[0].courseId);
+      }
+      this.sidebarService.setActiveLesson(res[0].courseId);
 
     })
   }
