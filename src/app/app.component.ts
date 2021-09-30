@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
-  title = 'bdu-app';
+  title = "bdu-app";
+
+  constructor(private route: ActivatedRoute) {}
+  ngOnInit(): void {}
 }

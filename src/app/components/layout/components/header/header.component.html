@@ -3,7 +3,7 @@
     <div class="header-top d-flex justify-between align-center">
       <div class="header-top-logo d-flex align-center column-gap-15">
         <img src="assets/images/layout/logo.svg" alt="logo" />
-        <a [routerLink]="['/student_education']" class="logo-title">
+        <a [routerLink]="['']" class="logo-title">
           <h2 class="font-size-17">{{ user?.university.name.az }}</h2>
           <h4 class="font-size-14 text-color-primary font-500 font-italic">
             Təhsilin Elektron İdarə Olunması Sistemi
@@ -12,7 +12,9 @@
       </div>
       <div class="header-top-signature d-flex align-center column-gap-15">
         <div class="signature-text font-italic">
-          <h4 class="font-size-16 font-300">“Təhsil millətin gələcəyidir” lore</h4>
+          <h4 class="font-size-16 font-300">
+            “Təhsil millətin gələcəyidir” lore
+          </h4>
           <h6 class="font-size-14 font-300">Ümummilli Lider Heydər Əliyev</h6>
         </div>
         <img src="assets/images/layout/signature.svg" alt="signature" />
@@ -41,8 +43,8 @@
           </div>
 
           <div class="user-pp-notification d-flex align-center">
-            <img *ngIf="user?.photoFilePath!=null" class="pp"
-              src="https://demo.empro.az/AuthRest2/api/get/file/{{user?.photoFilePath }}" alt="user_profile_photo" />
+            <img *ngIf="user?.photoFilePath!= null" class="pp"
+              src="https://demo.empro.az/AuthRest2/api/get/file/{{  user?.photoFilePath }}" alt="user_profile_photo" />
             <button class="notification">
               <img src="assets/images/icons/bell.svg" alt="" />
               <div class="notification-count">1</div>

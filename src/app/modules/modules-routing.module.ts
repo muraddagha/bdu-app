@@ -8,15 +8,18 @@ import { ScheduleComponent } from './schedule/components/schedule/schedule.compo
 const routes: Routes = [
   {
     // data: { templateHeaderType: 1 },
-    path: 'student_education', component: ModulesComponent,
+    path: '',
+    component: ModulesComponent,
     children: [
       {
-        path: '', component: HomeComponent,
+        path: '',
+        component: HomeComponent,
         data: { layoutType: 0, sidebarType: 0 },
       },
       {
-        path: 'lesson-info', component: LessonInfoComponent,
-        data: { layoutType: 0, sidebarType: 0 }
+        path: 'lesson-info',
+        component: LessonInfoComponent,
+        data: { layoutType: 0, sidebarType: 0 },
       },
       {
         path: 'schedule',
@@ -26,15 +29,15 @@ const routes: Routes = [
       {
         path: 'appeals',
         data: { layoutType: 0, sidebarType: 1 },
-        loadChildren: () => import("./appeals/appeals.module").then(m => m.AppealsModule)
-      }
-    ]
+        loadChildren: () =>
+          import('./appeals/appeals.module').then((m) => m.AppealsModule),
+      },
+    ],
   },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ModulesRoutingModule { }
+export class ModulesRoutingModule {}

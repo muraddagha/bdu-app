@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "https://demo.empro.az/AuthRest2/api/jwt/EducationSystem/CourseView/"
+  apiUrl: "https://demo.empro.az/AuthRest2/api/jwt"
 };
