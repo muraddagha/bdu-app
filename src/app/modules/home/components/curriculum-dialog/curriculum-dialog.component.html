@@ -5,12 +5,8 @@
   </div>
   <div class="dialog-body">
     <div class="dialog-body-header d-flex align-center justify-around">
-      <button
-        (click)="changePlanReport(eduYear.id)"
-        *ngFor="let eduYear of educationYears"
-        class="year-item"
-        [ngClass]="{ active: activeReport == eduYear.id }"
-      >
+      <button (click)="changePlanReport(eduYear.id)" *ngFor="let eduYear of educationYears" class="year-item"
+        [ngClass]="{ active: activeReport == eduYear.id }">
         {{ eduYear.name }}
       </button>
     </div>
@@ -19,69 +15,27 @@
         <div class="dialog-content-header">
           <h2>Tələbənin fərdi tədris planı</h2>
           <div class="dialog-content-header-items">
-            <div
-              class="
-                dialog-content-header-item
-                d-flex
-                align-center
-                column-gap-20
-              "
-            >
+            <div class="dialog-content-header-item d-flex align-center column-gap-20">
               <span>Fakültə:</span>
               <span>{{ educationYearReport?.kv.facultyName }}</span>
             </div>
-            <div
-              class="
-                dialog-content-header-item
-                d-flex
-                align-center
-                column-gap-20
-              "
-            >
+            <div class="dialog-content-header-item d-flex align-center column-gap-20">
               <span>İxtisas:</span>
               <span>{{ educationYearReport?.kv.specialityName }}</span>
             </div>
-            <div
-              class="
-                dialog-content-header-item
-                d-flex
-                align-center
-                column-gap-20
-              "
-            >
+            <div class="dialog-content-header-item d-flex align-center column-gap-20">
               <span>Tələbə:</span>
               <span>{{ educationYearReport?.kv.studentFullname }}</span>
             </div>
-            <div
-              class="
-                dialog-content-header-item
-                d-flex
-                align-center
-                column-gap-20
-              "
-            >
+            <div class="dialog-content-header-item d-flex align-center column-gap-20">
               <span>Tələbənin tədris ili:</span>
               <span>{{ educationYearReport?.kv.educationYearName }}</span>
             </div>
-            <div
-              class="
-                dialog-content-header-item
-                d-flex
-                align-center
-                column-gap-20
-              "
-            >
+            <div class="dialog-content-header-item d-flex align-center column-gap-20">
               <span>Təhsil ili:</span>
               <span>{{ educationYearReport?.kv.kurs }}</span>
             </div>
-            <div
-              class="
-                dialog-content-header-item
-                d-flex
-                align-center
-                column-gap-20
-              "
-            >
+            <div class="dialog-content-header-item d-flex align-center column-gap-20">
               <span>Seçilmiş fənn və müəllimlər:</span>
               <span></span>
             </div>
@@ -105,22 +59,12 @@
               </thead>
               <tbody>
                 <tr *ngFor="let item of educationYearReport?.tbl[0].r">
-                  <td>
-                    {{ item.subjectCode }}
-                  </td>
+                  <td>{{ item.subjectCode }}</td>
                   <td></td>
-                  <td>
-                    {{ item.subjectName }}
-                  </td>
-                  <td>
-                    {{ item.credit }}
-                  </td>
-                  <td>
-                    {{ item.departmentName }}
-                  </td>
-                  <td>
-                    {{ item.teachers }}
-                  </td>
+                  <td>{{ item.subjectName }}</td>
+                  <td>{{ item.credit }}</td>
+                  <td>{{ item.departmentName }}</td>
+                  <td>{{ item.teachers }}</td>
                   <td></td>
                 </tr>
               </tbody>
