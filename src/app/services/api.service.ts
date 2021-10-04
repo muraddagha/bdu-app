@@ -7,6 +7,7 @@ import { IResponseModel } from "../shared/models/response.model";
 import { IUser } from "../shared/models/user/user.model";
 import { IEducationYear } from "../shared/models/education/education-year.model";
 import { IEducationYearReport } from "../shared/models/education/education-year-report.model";
+import { ILessonSubwork } from "../modules/lesson-info/models/lesson-subwork.model";
 
 @Injectable({
   providedIn: "root"
@@ -91,6 +92,17 @@ export class ApiService {
       }
     };
     return this.http.post<IResponseModel>(environment.apiUrl + "/EducationSystem/CourseView/GetColloquiumStudentPointList", params, {
+      headers: this.header
+    });
+  }
+
+  public getColloquimInStudentPointList(courseId: string): Observable<IResponseModel> {
+    let params = {
+      kv: {
+        courseId: courseId
+      }
+    };
+    return this.http.post<IResponseModel>(environment.apiUrl + `/EducationSystem/CourseView/GetInColloquiumStudentPointList`, params, {
       headers: this.header
     });
   }

@@ -1,22 +1,21 @@
 <div *ngIf="type==0" class="small-info bg-img-default radius-20"
     style="background-image: url('assets/images/lesson-info/lesson-kollok-work-bg.svg');">
-    <app-main-title title="SƏRBƏST İŞ" point="10"></app-main-title>
+    <app-main-title [title]="data|getDataTitle" point="10"></app-main-title>
     <div class="small-info-items">
         <div *ngFor="let item of data" class="small-info-item">
-            <p>{{item.date}}</p>
-            <p>{{item.lesson}}</p>
-            <p *ngIf="item.isSuccess"><img src="assets/images/icons/check.svg" alt=""></p>
-            <p *ngIf="!item.isSuccess"><img src="assets/images/icons/minus.svg" alt=""></p>
+            <p>{{item.endDate}}</p>
+            <p>{{item.topicName}}</p>
+            <p>{{item.point}}</p>
         </div>
     </div>
 </div>
 <div *ngIf="type==1" class="small-info bg-img-default radius-20"
     style="background-image: url('assets/images/lesson-info/lesson-kollok-work-bg.svg');">
-    <app-main-title title="Kollokvium" point="10"></app-main-title>
+    <app-main-title [title]="data|getDataTitle" point="10"></app-main-title>
     <div class="small-info-items">
         <div *ngFor="let item of data" class="small-info-item">
-            <p>{{item.date}}</p>
-            <p>{{item.lesson}}</p>
+            <p>{{item.endDate}}</p>
+            <p>{{item.topicName}}</p>
             <p>{{item.point}}</p>
         </div>
     </div>

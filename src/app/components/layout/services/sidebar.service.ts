@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class SidebarService {
   public activeCourse: BehaviorSubject<string> = new BehaviorSubject<string>("");
-  constructor() { }
+  constructor() {}
 
-  public setActiveLesson(courseId:string){
+  public setActiveLesson(courseId: string) {
     this.activeCourse.next(courseId);
   }
 }

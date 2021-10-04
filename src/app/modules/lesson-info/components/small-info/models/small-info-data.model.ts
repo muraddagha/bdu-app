@@ -1,6 +1,5 @@
 export interface ISmallInfoData {
-    date: string | Date,
-    lesson: string,
-    point?: number,
-    isSuccess?: boolean
+  endDate: string | Date;
+  topicName: string;
+  point?: number;
 }

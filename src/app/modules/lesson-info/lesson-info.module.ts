@@ -6,6 +6,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
 import { SmallInfoComponent } from './components/small-info/small-info.component';
 import { LessonSmallInfoAreaComponent } from './components/lesson-small-info-area/lesson-small-info-area.component';
 import { LessonActivitiesComponent } from './components/lesson-activities/lesson-activities.component';
+import { GetDataTitlePipe } from './pipes/get-data-title.pipe';
 
 
 
@@ -15,7 +16,8 @@ import { LessonActivitiesComponent } from './components/lesson-activities/lesson
     LessonInfoAreaComponent,
     SmallInfoComponent,
     LessonSmallInfoAreaComponent,
-    LessonActivitiesComponent
+    LessonActivitiesComponent,
+    GetDataTitlePipe
   ],
   imports: [
     CommonModule,

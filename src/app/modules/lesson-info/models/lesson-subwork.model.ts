@@ -1,0 +1,32 @@
+export interface ILessonSubwork {
+  studentFileId: "";
+  note: "";
+  updateDate: "2021-09-17 07:18:05+04";
+  createUserId: "100000000";
+  endDate: "16/09/2021";
+  pointEn: "1";
+  typeName: "Sərbəst iş";
+  teacherFileName: "";
+  point: "1";
+  studentId: "410000328";
+  pointId: "110000151";
+  typeNameRu: "Сам. работа";
+  id: "210907144503284177";
+  courseId: "210615434103938102";
+  createDate: "2021-09-17 07:14:45+04";
+  studentFileName: "0";
+  teacherFileId: "0";
+  typeNameAz: "Sərbəst iş";
+  pointCode: "1";
+  updateUserId: "240000017";
+  courseExecisesId: "2109212951004110795";
+  active: "1";
+  pointRu: "1";
+  typeCode: "EVA_05";
+  typeNameEn: "Individual work";
+  pointAz: "1";
+  topicName: "Parçanın yarıya bölünməsi.";
+  typeId: "110000119";
+  startDate: "09/09/2021";
+  status: "110000058";
+}
