@@ -128,4 +128,16 @@ export class ApiService {
       headers: this.header
     });
   }
+  public getSchedule(startDate: string, endDate: string): Observable<any> {
+    let params = {
+      kv: {
+        startDate: startDate,
+        endDate: endDate
+      }
+    }
+    return this.http.post<any>(environment.apiUrl + "/EducationSystem/CourseSchedule/GetUserSchedule", params, {
+      headers: this.header
+    }).pipe(map(val => val['tbl'][0]['r']));
+  }
+
 }
