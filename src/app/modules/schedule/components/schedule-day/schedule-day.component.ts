@@ -11,9 +11,9 @@ export class ScheduleDayComponent implements OnInit {
   public now: Date;
   public daySchedule: Observable<any>;
   public day: string;
+  public weekDay: string;
   constructor(private apiService: ApiService) {
     this.now = new Date();
-    console.log(this.now);
   }
 
   ngOnInit(): void {
@@ -34,6 +34,8 @@ export class ScheduleDayComponent implements OnInit {
     this.getDate();
   }
   public getDate(): void {
+    const week = ["Bazar", "Bazar ertəsi", "Çərşənbə axşamı", "Çərşənbə", "Cümə Axşamı", "Cümə", "Şənbə"];
+    this.weekDay = week[this.now.getDay()];
     const months = ["Yanvar", "Fevral", "Mart", "Aprel", "May", "İyun", "İyul", "Avqust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"];
     const month = months[this.now.getMonth()].toString();
     const day = this.now.getDate();
