@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-schedule-day',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule-day.component.scss']
 })
 export class ScheduleDayComponent implements OnInit {
-
-  constructor() { }
+  private now: string
+  public daySchedule: Observable<any>
+  constructor(private apiService: ApiService) {
+    this.now = new Date().toLocaleDateString()
+  }
 
   ngOnInit(): void {
+    this.getDaySchedule()
+  }
+  private getDaySchedule(): void {
+    this.daySchedule = this.apiService.getSchedule(this.now, this.now);
   }
 
 }

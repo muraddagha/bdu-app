@@ -13,96 +13,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let data of daySchedule|async">
                     <td>
                         <div class="content">
-                            <p>08:30</p>
+                            <p>{{data.startTime}}</p>
                         </div>
                     </td>
                     <td>
-                        <div class="content"></div>
+                        <div class="content">{{data.subjectName}}</div>
                     </td>
                     <td>
-                        <div class="content"></div>
+                        <div class="content">{{data.lessonTypeName}}</div>
                     </td>
                     <td>
-                        <div class="content"></div>
+                        <div class="content">{{data.roomName}}</div>
                     </td>
                     <td>
-                        <div class="content"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="content">
-                            <p>08:30</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content">
-                            <p>Fizika</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content">
-                            <p>Məşqələ</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content">
-                            <span>Kor. 1 / aud 111</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content">
-                            <span>Həsənova Təranə</span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="content">
-                            <p>08:30</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content"></div>
-                    </td>
-                    <td>
-                        <div class="content"></div>
-                    </td>
-                    <td>
-                        <div class="content"></div>
-                    </td>
-                    <td>
-                        <div class="content"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="content">
-                            <p>08:30</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content">
-                            <p>Fizika</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content">
-                            <p>Məşqələ</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content">
-                            <span>Kor. 1 / aud 111</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content">
-                            <span>Həsənova Təranə</span>
-                        </div>
+                        <div class="content">{{data.teacherFullname}}</div>
                     </td>
                 </tr>
             </tbody>
