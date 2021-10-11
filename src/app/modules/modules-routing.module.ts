@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { LayoutType } from "../enums/layout-type";
 import { SidebarType } from "../enums/sidebar-type";
+import { HomeResolver } from "../shared/state/home-state/home.resolver";
+import { LessonResolver } from "../shared/state/lesson/lesson.resolver";
 import { HomeComponent } from "./home/components/home/home.component";
 import { LessonInfoComponent } from "./lesson-info/components/lesson-info/lesson-info.component";
 import { ModulesComponent } from "./modules.component";
@@ -13,11 +15,17 @@ const routes: Routes = [
     // data: { templateHeaderType: 1 },
     path: "",
     component: ModulesComponent,
+    resolve: {
+      lessons: LessonResolver
+    },
     children: [
       {
         path: "",
         component: HomeComponent,
-        data: { layoutType: LayoutType.Sidebar, sidebarType: SidebarType.Education }
+        data: { layoutType: LayoutType.Sidebar, sidebarType: SidebarType.Education },
+        resolve: {
+          homeData: HomeResolver
+        }
       },
       {
         path: "lesson-info",

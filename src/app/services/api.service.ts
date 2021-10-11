@@ -8,6 +8,7 @@ import { IUser } from "../shared/models/user/user.model";
 import { IEducationYear } from "../shared/models/education/education-year.model";
 import { IEducationYearReport } from "../shared/models/education/education-year-report.model";
 import { ILessonSubwork } from "../modules/lesson-info/models/lesson-subwork.model";
+import { IHomeData } from "../shared/models/home-data.model";
 
 @Injectable({
   providedIn: "root"
@@ -39,9 +40,9 @@ export class ApiService {
     };
     return this.http
       .post<any>(environment.apiUrl + "/EducationSystem/CourseView/GetStudentTranscript", params, { headers: this.header })
-      .pipe(map(val => val.tbl));
+      .pipe(map(val => val.tbl[0].r));
   }
-  public GetCourseOverviewForStudents(courseId: string): Observable<IResponseModel> {
+  public GetCourseOverviewForStudents(courseId: number): Observable<IHomeData> {
     let params = {
       kv: {
         courseId: courseId
@@ -125,6 +126,12 @@ export class ApiService {
       }
     };
     return this.http.post<IEducationYearReport>(environment.apiUrl + "/EducationSystem/Report/GetStudentEducationPlanReport", params, {
+      headers: this.header
+    });
+  }
+  public getStudentTranscriptReport(): Observable<any> {
+    let params = {};
+    return this.http.post<any>(environment.apiUrl + "/EducationSystem/Report/GetStudentTranscriptReport", params, {
       headers: this.header
     });
   }

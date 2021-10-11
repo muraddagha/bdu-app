@@ -7,75 +7,94 @@
         </div>
         <div class="transkript-header-content d-flex">
             <div class="transkript-header-content-first-col">
-                <div class="transkript-header-content-item">ahsghaskjafdjkasdkashdkjaadsas</div>
-                <div class="transkript-header-content-item">ahsghaskjafdjkasdkashdkjaadsas</div>
-                <div class="transkript-header-content-item">ahsghaskjafdjkasdkashdkjaadsas</div>
-                <div class="transkript-header-content-item">ahsghaskjafdjkasdkashdkjaadsas</div>
+                <div class="transkript-header-content-item">
+                    <span>Fakültə: {{studentTranscriptReport?.kv.facultyName}}</span>
+                </div>
+                <div class="transkript-header-content-item">
+                    <span>Tələbə: {{studentTranscriptReport?.kv.studentCardNo}}</span>
+                </div>
+                <div class="transkript-header-content-item"><span>Soyadı və
+                        adı:{{studentTranscriptReport?.kv.studentFullname}}</span></div>
+                <div class="transkript-header-content-item"><span>Doğum
+                        tarixi: {{studentTranscriptReport?.kv.studentBirthdate}}</span></div>
             </div>
             <div class="transkript-header-content-second-col">
-                <div class="transkript-header-content-item">ahsghaskjafdjkasdkashdkjaadsas</div>
-                <div class="transkript-header-content-item">ahsghaskjafdjkasdkashdkjaadsas</div>
-                <div class="transkript-header-content-item">ahsghaskjafdjkasdkashdkjaadsas</div>
-                <div class="transkript-header-content-item">ahsghaskjafdjkasdkashdkjaadsas</div>
+                <div class="transkript-header-content-item">
+                    <span>İxtisas: {{studentTranscriptReport?.kv.specialityName}}</span>
+                </div>
+                <div class="transkript-header-content-item">
+                    <span>İxtisaslaşma: {{studentTranscriptReport?.kv.specialisationName}}</span>
+                </div>
+                <div class="transkript-header-content-item">
+                    <span>Təhsil pilləsi: {{studentTranscriptReport?.kv.educationLevelName}}</span>
+                </div>
+                <div class="transkript-header-content-item">
+                    <span>Tədris dili: {{studentTranscriptReport?.kv.educationLangName}}</span>
+                </div>
             </div>
         </div>
     </div>
-    <div class="transkript-body">
-        <div class="second-table">
-            <h6>Akademik il:1</h6>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Sem</th>
-                        <th>Ad</th>
-                        <th>Kod</th>
-                        <th>Kredit sayı</th>
-                        <th>Kr</th>
-                        <th>Bal</th>
-                        <th>Hərf</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>alma</td>
-                        <td>alma</td>
-                        <td>alma</td>
-                        <td>alma</td>
-                        <td>alma</td>
-                        <td>alma</td>
-                        <td>alma</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Kreditlərin sayı</th>
-                        <th>ÜOMG</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td>İlin sonu:</td>
-                        <td></td>
-                        <td>45</td>
-                        <td>17</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Ümumi:</td>
-                        <td></td>
-                        <td>45</td>
-                        <td>17</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-            </table>
+    <div class="table-container">
+        <div *ngFor="let tbl of transcriptReportTbl" class="transkript-body">
+            <div class="second-table">
+                <h6>Akademik il:{{tbl.tn}}</h6>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sem</th>
+                            <th>Ad</th>
+                            <th>Kod</th>
+                            <th>Kr</th>
+                            <th>Bal</th>
+                            <th>Hərf</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of tbl.r">
+                            <td>{{row.semester}}</td>
+                            <td>{{row.subjectName}}</td>
+                            <td>{{row.subjectCode}}</td>
+                            <td>{{row.credit}}</td>
+                            <td>{{row.endPoint}}</td>
+                            <td>{{row.endPointWord}}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th>Kreditlərin sayı</th>
+                            <th>ÜOMG</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>İlin sonu:</td>
+                            <td *ngIf="tbl.tn==1">{{tbl.r|totalCredit}}</td>
+                            <td *ngIf="tbl.tn==2">{{tbl.r|totalCredit}}</td>
+                            <td *ngIf="tbl.tn==3">{{tbl.r|totalCredit}}</td>
+                            <td *ngIf="tbl.tn==4">{{tbl.r|totalCredit}}</td>
+                            <td *ngIf="tbl.tn==1">{{tbl.r|totalPoint}}</td>
+                            <td *ngIf="tbl.tn==2">{{tbl.r|totalPoint}}</td>
+                            <td *ngIf="tbl.tn==3">{{tbl.r|totalPoint}}</td>
+                            <td *ngIf="tbl.tn==4">{{tbl.r|totalPoint}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ümumi:</td>
+                            <td *ngIf="tbl.tn==1">{{tbl.r|totalCredit}}</td>
+                            <!-- <td>{{tbl|totalCourseCredit}}</td> -->
+                            <td *ngIf="tbl.tn==1">{{tbl.r|totalPoint}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </div>
+
 </section>
