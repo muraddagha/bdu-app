@@ -129,6 +129,12 @@ export class ApiService {
       headers: this.header
     });
   }
+  public getStudentTranscriptReport(): Observable<any> {
+    let params = {};
+    return this.http.post<any>(environment.apiUrl + "/EducationSystem/Report/GetStudentTranscriptReport", params, {
+      headers: this.header
+    });
+  }
   public getSchedule(startDate: string, endDate: string): Observable<any> {
     let params = {
       kv: {

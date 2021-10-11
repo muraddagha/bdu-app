@@ -1,16 +1,5 @@
-<div class="schedule-header">
-    <div class="d-flex justify-between align-center">
-        <app-main-title [isMargin]="false" [isUppercase]="isUppercase" class="flex-basis-100" [title]="title">
-        </app-main-title>
-        <div class="change-actions d-flex align-center flex-basis-100 justify-center">
-            <button><img src="assets/images/icons/left-arrow.svg" alt="left-arrow"></button>
-            <h2>{{changeActionTitle}}</h2>
-            <button><img src="assets/images/icons/right-arrow.svg" alt="left-arrow"></button>
-        </div>
-        <div class="change-schedule-actions d-flex align-center flex-basis-100 flex-end">
-            <button (click)="changeSchedule(0)" [ngClass]="{'active':activeSchedule===0}">Ay</button>
-            <button (click)="changeSchedule(1)" [ngClass]="{'active':activeSchedule===1}">Həftə</button>
-            <button (click)="changeSchedule(2)" [ngClass]="{'active':activeSchedule===2}">Gün</button>
-        </div>
-    </div>
+<div class="change-schedule-actions d-flex align-center  flex-end">
+    <button (click)="changeSchedule(0)" [ngClass]="{'active':activeSchedule===0}">Ay</button>
+    <button (click)="changeSchedule(1)" [ngClass]="{'active':activeSchedule===1}">Həftə</button>
+    <button (click)="changeSchedule(2)" [ngClass]="{'active':activeSchedule===2}">Gün</button>
 </div>

@@ -1,6 +1,22 @@
 <div class="schedule-day">
-    <app-schedule-header title="Çərşənbə Axşamı" [isUppercase]="true" changeActionTitle="28 Sentyabr">
-    </app-schedule-header>
+    <div class="schedule-header">
+        <div class="d-flex justify-between align-center">
+            <app-main-title [isMargin]="false" [isUppercase]="true" class="flex-basis-100" title="Çərşənbə Axşamı">
+            </app-main-title>
+            <div class="change-actions d-flex align-center flex-basis-100 justify-center">
+                <button (click)="previousDate()">
+                    <img src="assets/images/icons/left-arrow.svg" alt="left-arrow">
+                </button>
+                <h2>{{day}}</h2>
+                <button (click)="nextDate()">
+                    <img src="assets/images/icons/right-arrow.svg" alt="left-arrow">
+                </button>
+            </div>
+            <app-schedule-header class="flex-basis-100">
+            </app-schedule-header>
+        </div>
+    </div>
+
     <div class="schedule-table">
         <table>
             <thead>
