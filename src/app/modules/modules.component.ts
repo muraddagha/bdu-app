@@ -9,18 +9,18 @@ export class ModulesComponent implements OnInit {
   private token;
 
   constructor(private route: ActivatedRoute, private router: Router) {
-    this.setTokenLocalStorage();
+    // this.setTokenLocalStorage();
     this.removeQueryParam();
   }
 
   ngOnInit(): void {}
 
-  public setTokenLocalStorage(): void {
-    this.token = this.route.snapshot.queryParams.tkn;
-    if (this.token != undefined) {
-      localStorage.setItem("auth", `Education ${this.token}`);
-    }
-  }
+  // public setTokenLocalStorage(): void {
+  //   this.token = this.route.snapshot.queryParams.tkn;
+  //   if (this.token != undefined) {
+  //     localStorage.setItem("auth", `Education ${this.token}`);
+  //   }
+  // }
 
   public removeQueryParam(): void {
     var currURL = window.location.href;

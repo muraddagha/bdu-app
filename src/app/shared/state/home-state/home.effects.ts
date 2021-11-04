@@ -3,7 +3,7 @@ import { areLessonsLoaded, selectAllLessons, selectFirstLessonCourseId } from ".
 import { allHomeDataLoaded } from "./home.actions";
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { concatMap, map } from "rxjs/operators";
+import { concatMap, map, tap } from "rxjs/operators";
 import { ApiService } from "src/app/services/api.service";
 import { HomeActions } from "../lesson-2/action-types";
 import { select, Store } from "@ngrx/store";
@@ -12,6 +12,7 @@ import { AppState } from "src/app/reducers";
 @Injectable()
 export class HomeEffects {
   private firstId;
+  private header;
   constructor(private actions$: Actions, private apiService: ApiService, private store: Store<AppState>, private homeService: HomeService) {
     this.store.pipe(select(selectFirstLessonCourseId)).subscribe(res => {
       this.firstId = res;
@@ -19,6 +20,9 @@ export class HomeEffects {
   }
   loadHomeData = createEffect(() =>
     this.actions$.pipe(
+      tap(() => {
+        this.header = localStorage.getItem("auth");
+      }),
       ofType(HomeActions.loadAllHomeData),
       concatMap(action => this.apiService.GetCourseOverviewForStudents(this.firstId)),
       map(homeData => allHomeDataLoaded({ homeData }))

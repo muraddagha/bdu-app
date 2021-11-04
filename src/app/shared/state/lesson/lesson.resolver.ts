@@ -14,6 +14,11 @@ export class LessonResolver implements Resolve<any> {
   private loading: boolean = false;
   constructor(private store: Store<AppState>, private lessonService: LessonEntityService) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+    let token = route.queryParams.tkn;
+    if (token != undefined) {
+      localStorage.setItem("auth", `Education ${token}`);
+    }
+
     return this.store.pipe(
       select(areLessonsLoaded),
       tap(lessonsloaded => {

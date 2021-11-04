@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Observable } from "rxjs";
-import { concatMap, map } from "rxjs/operators";
+import { concatMap, map, tap } from "rxjs/operators";
 import { ApiService } from "src/app/services/api.service";
 import { LessonActions } from "./action-types";
 import { allLessonsLoaded } from "./lesson.actions";
@@ -12,6 +12,9 @@ export class LessonsEffects {
 
   loadLessons = createEffect(() =>
     this.actions$.pipe(
+      tap(() => {
+        console.log(localStorage.getItem("auth"));
+      }),
       ofType(LessonActions.loadAllLessons),
       concatMap(action => this.apiService.getStudentTranscript("CURRENT")),
       map(lessons => allLessonsLoaded({ lessons }))

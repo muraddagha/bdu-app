@@ -11,7 +11,9 @@ import { areHomeDataLoaded } from "./home.selector";
 @Injectable()
 export class HomeResolver implements Resolve<any> {
   private loading: boolean = false;
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>) {
+    console.log("resolver");
+  }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     return this.store.pipe(
       select(areHomeDataLoaded),

@@ -25,13 +25,27 @@ export class ApiService {
   }
 
   public getUserData(): Observable<IUser> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {}
     };
-    return this.http.post<IUser>(environment.apiUrl + "/user/check", params, { headers: this.header }).pipe(map(res => res["data"]));
+    return this.http.post<IUser>(environment.apiUrl + "/user/check", params, { headers: header }).pipe(map(res => res["data"]));
   }
 
   public getStudentTranscript(typeCode: string, lang?: string): Observable<any> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {
         typeCode: typeCode,
@@ -39,103 +53,174 @@ export class ApiService {
       }
     };
     return this.http
-      .post<any>(environment.apiUrl + "/EducationSystem/CourseView/GetStudentTranscript", params, { headers: this.header })
+      .post<any>(environment.apiUrl + "/EducationSystem/CourseView/GetStudentTranscript", params, { headers: header })
       .pipe(map(val => val.tbl[0].r));
   }
   public GetCourseOverviewForStudents(courseId: number): Observable<IHomeData> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {
         courseId: courseId
       }
     };
+
     return this.http.post<IResponseModel>(environment.apiUrl + "/EducationSystem/CourseView/GetCourseOverviewForStudents", params, {
-      headers: this.header
+      headers: header
     });
   }
 
   public getCourseMeetingListForStudent(courseId: string): Observable<IResponseModel> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {
         courseId: courseId
       }
     };
     return this.http.post<IResponseModel>(environment.apiUrl + "/EducationSystem/CourseView/GetCourseMeetingListForStudent", params, {
-      headers: this.header
+      headers: header
     });
   }
 
   public getEvaluationListByOverview(courseId: string): Observable<IResponseModel> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {
         courseId: courseId
       }
     };
     return this.http.post<IResponseModel>(environment.apiUrl + "/EducationSystem/CourseView/GetEvaluationListByOverview", params, {
-      headers: this.header
+      headers: header
     });
   }
 
   public getSubWorkStudentPointList(courseId: string): Observable<IResponseModel> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {
         courseId: courseId
       }
     };
     return this.http.post<IResponseModel>(environment.apiUrl + "/EducationSystem/CourseView/GetSubWorkStudentPointList", params, {
-      headers: this.header
+      headers: header
     });
   }
 
   public getColloquiumStudentPointList(courseId: string): Observable<IResponseModel> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {
         courseId: courseId
       }
     };
     return this.http.post<IResponseModel>(environment.apiUrl + "/EducationSystem/CourseView/GetColloquiumStudentPointList", params, {
-      headers: this.header
+      headers: header
     });
   }
 
   public getColloquimInStudentPointList(courseId: string): Observable<IResponseModel> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {
         courseId: courseId
       }
     };
     return this.http.post<IResponseModel>(environment.apiUrl + `/EducationSystem/CourseView/GetInColloquiumStudentPointList`, params, {
-      headers: this.header
+      headers: header
     });
   }
 
   public getEducationYearByCommon(): Observable<IEducationYear[]> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {}
     };
     return this.http
       .post<IEducationYear[]>(environment.apiUrl + "/EducationSystem/EduYear/GetEduYearByCommon", params, {
-        headers: this.header
+        headers: header
       })
       .pipe(map(res => res["tbl"][0]["r"]));
   }
 
   public getStudentEducationPlanReport(educationYearId: string): Observable<IEducationYearReport> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {
         educationYearId: educationYearId
       }
     };
     return this.http.post<IEducationYearReport>(environment.apiUrl + "/EducationSystem/Report/GetStudentEducationPlanReport", params, {
-      headers: this.header
+      headers: header
     });
   }
   public getStudentTranscriptReport(): Observable<any> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {};
     return this.http.post<any>(environment.apiUrl + "/EducationSystem/Report/GetStudentTranscriptReport", params, {
-      headers: this.header
+      headers: header
     });
   }
   public getSchedule(startDate: string, endDate: string): Observable<any> {
+    let header = {};
+    let token = localStorage.getItem("auth");
+    if (token != null) {
+      header = {
+        auth: token
+      };
+    }
     let params = {
       kv: {
         startDate: startDate,
@@ -144,7 +229,7 @@ export class ApiService {
     };
     return this.http
       .post<any>(environment.apiUrl + "/EducationSystem/CourseSchedule/GetUserSchedule", params, {
-        headers: this.header
+        headers: header
       })
       .pipe(map(val => val["tbl"][0]["r"]));
   }

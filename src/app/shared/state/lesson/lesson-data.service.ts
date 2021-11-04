@@ -19,6 +19,15 @@ export class LessonDataService extends DefaultDataService<ILessonData> {
     }
   }
   getAll(): Observable<ILessonData[]> {
+    let header = {};
+    const token = localStorage.getItem("auth");
+    if (token != null) {
+      this.header = {
+        auth: token
+      };
+    }
+    console.log(header);
+
     let params = {
       kv: {
         typeCode: "CURRENT",
@@ -26,21 +35,17 @@ export class LessonDataService extends DefaultDataService<ILessonData> {
       }
     };
     return this.http
-      .post<ILessonData[]>(environment.apiUrl + "/EducationSystem/CourseView/GetStudentTranscript", params, { headers: this.header })
+      .post<ILessonData[]>(environment.apiUrl + "/EducationSystem/CourseView/GetStudentTranscript", params, { headers: header })
       .pipe(map(res => res["tbl"][0]["r"]));
   }
- getWithQuery(typeCode: string): Observable<any> {
+  getWithQuery(typeCode: string): Observable<any> {
     let params = {
       kv: {
-        typeCode: typeCode,
-      },
+        typeCode: typeCode
+      }
     };
     return this.http
-      .post<any>(
-        'https://demo.empro.az/AuthRest2/api/jwt/EducationSystem/CourseView/GetStudentTranscript',
-        params,
-        { headers: this.header }
-      )
-      .pipe(map((res) => res.tbl[0].r));
+      .post<any>("https://demo.empro.az/AuthRest2/api/jwt/EducationSystem/CourseView/GetStudentTranscript", params, { headers: this.header })
+      .pipe(map(res => res.tbl[0].r));
   }
 }
