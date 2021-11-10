@@ -61,12 +61,20 @@ export class SidebarComponent implements OnInit {
     });
   }
   public getStudentTranscript(): void {
-    this.store.pipe(select(selectAllLessons)).subscribe(res => {
-      this.lessons = res;
-      this.sidebarService.setActiveLesson(res[0].courseId);
-      this.homeService.changeContent(res[0].courseId);
-      this.lessonInfoService.changeContent(res[0].courseId);
+    this.apiService.getStudentTranscript("Current").subscribe(res => {
+      if (res != null) {
+        this.lessons = res;
+        this.sidebarService.setActiveLesson(res[0].courseId);
+        this.homeService.changeContent(res[0].courseId);
+        this.lessonInfoService.changeContent(res[0].courseId);
+      }
     });
+    // this.store.pipe(select(selectAllLessons)).subscribe(res => {
+    //   this.lessons = res;
+    //   this.sidebarService.setActiveLesson(res[0].courseId);
+    //   this.homeService.changeContent(res[0].courseId);
+    //   this.lessonInfoService.changeContent(res[0].courseId);
+    // });
   }
 
   public changeLessonData(event, courseId: string) {

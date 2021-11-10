@@ -15,17 +15,17 @@ const routes: Routes = [
     // data: { templateHeaderType: 1 },
     path: "",
     component: ModulesComponent,
-    resolve: {
-      lessons: LessonResolver
-    },
+    // resolve: {
+    //   lessons: LessonResolver
+    // },
     children: [
       {
         path: "",
         component: HomeComponent,
-        data: { layoutType: LayoutType.Sidebar, sidebarType: SidebarType.Education },
-        resolve: {
-          homeData: HomeResolver
-        }
+        data: { layoutType: LayoutType.Sidebar, sidebarType: SidebarType.Education }
+        // resolve: {
+        //   homeData: HomeResolver
+        // }
       },
       {
         path: "lesson-info",

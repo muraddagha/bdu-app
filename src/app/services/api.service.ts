@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, observable } from "rxjs";
 import { environment } from "src/environments/environment";
-import { map } from "rxjs/operators";
 import { IResponseModel } from "../shared/models/response.model";
 import { IUser } from "../shared/models/user/user.model";
 import { IEducationYear } from "../shared/models/education/education-year.model";
 import { IEducationYearReport } from "../shared/models/education/education-year-report.model";
 import { ILessonSubwork } from "../modules/lesson-info/models/lesson-subwork.model";
 import { IHomeData } from "../shared/models/home-data.model";
+import { catchError, map } from "rxjs/operators";
+import { Observable, of } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -52,9 +52,12 @@ export class ApiService {
         lang: lang
       }
     };
-    return this.http
-      .post<any>(environment.apiUrl + "/EducationSystem/CourseView/GetStudentTranscript", params, { headers: header })
-      .pipe(map(val => val.tbl[0].r));
+    return this.http.post<any>(environment.apiUrl + "/EducationSystem/CourseView/GetStudentTranscript", params, { headers: header }).pipe(
+      map(res => res["tbl"][0]["r"]),
+      catchError((error: Error) => {
+        return of(null);
+      })
+    );
   }
   public GetCourseOverviewForStudents(courseId: number): Observable<IHomeData> {
     let header = {};

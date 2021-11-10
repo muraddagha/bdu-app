@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  // apiUrl: "https://edu.bestcomp.net/AuthRest/api/jwt"
   apiUrl: "https://demo.empro.az/AuthRest2/api/jwt"
 };
 
